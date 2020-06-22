@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Technician__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>Related Shop Technician.  For Tech Assist Community users to assign case.</description>
+    <externalId>false</externalId>
+    <label>Technician</label>
+    <lookupFilter>
+        <active>true</active>
+        <booleanFilter>1 OR 2</booleanFilter>
+        <filterItems>
+            <field>SVMXC__Service_Group_Members__c.SVMXC__Active__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </filterItems>
+        <filterItems>
+            <field>SVMXC__Service_Group_Members__c.Active_Wesco__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </filterItems>
+        <infoMessage>Select active Shop Technician</infoMessage>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>SVMXC__Service_Group_Members__c</referenceTo>
+    <relationshipLabel>Contacts</relationshipLabel>
+    <relationshipName>Contacts</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Lookup</type>
+</CustomField>

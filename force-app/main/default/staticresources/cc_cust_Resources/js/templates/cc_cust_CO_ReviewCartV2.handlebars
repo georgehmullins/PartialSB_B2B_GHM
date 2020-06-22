@@ -1,0 +1,247 @@
+<div id="cart_items_container reviewSection" class="">
+    <div class="cart_item_list table-responsive">
+        <table  class="table ">
+            <thead class="grey lighten-2">
+                <tr>
+                    <th scope="col">{{pageLabelMap 'OrderSummaryNew_Product'}}</th>
+                    <th scope="col">{{pageLabelMap 'OrderSummaryNew_ProductDescription'}}</th>
+                    <th scope="col">{{pageLabelMap 'OrderSummaryNew_ProductAvailability'}}</th>
+                    <th scope="col">{{pageLabelMap 'OrderSummaryNew_ProductPRICE'}}</th>
+                    <th scope="col"></th>
+                    <th scope="col">{{pageLabelMap 'OrderSummaryNew_ProductQTY'}}</th>
+                    <th scope="col">{{pageLabelMap 'OrderSummaryNew_ProductTOTAL'}}</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each this.cartItems}}
+                    <tr>
+                        {{#if this.mockProduct.sku}}
+                            <td>{{this.mockProduct.sku}}</td>
+                        {{else}}
+                            <td></td>
+                        {{/if}}
+                        {{#if this.mockProduct.sfdcName}}
+                            <td>{{this.mockProduct.sfdcName}}</td>
+                        {{else}}
+                            <td></td>
+                        {{/if}}
+                        {{#if this.b2bavailability}}
+                            <td>{{textToHTML this.b2bavailability}}</td>
+                        {{else}}
+                            <td></td>
+                        {{/if}}
+                        {{#if this.mockProduct.price}}
+                            <td>{{price this.mockProduct.price}}</td>
+                        {{else}}
+                            <td></td>
+                        {{/if}}
+                        {{#if this.b2BsuggRetailPrice}}
+                            <td>{{price this.b2BsuggRetailPrice}}</td>
+                        {{else}}
+                            <td></td>
+                        {{/if}}
+                        {{#if this.quantity}}
+                            <td>{{this.quantity}}</td>
+                        {{else}}
+                            <td></td>
+                        {{/if}}
+                        {{#if this.SubAmount}}
+                            <td>{{price this.SubAmount}}</td>
+                        {{else}}
+                            <td></td>
+                        {{/if}}
+                    </tr>
+                {{/each}}
+        </table>
+
+     <!--{{#each this.cartItems}}
+     <div class="cart_item row">
+      {{#ifNotEquals this.cartItemType 'Coupon'}}
+      <div class="col-md-2">
+       {{#if product.EProductMediasS.[0]}}
+        {{displayImage this 'orderReview img-responsive'
+        src=(displayEProductMedia this.product.EProductMediasS.[0])
+        alt=this.product.EProductMediasS.[0].altMessage
+        dataId=this.product.SKU}}
+       {{/if}}
+      </div>
+      <div class="col-md-6">
+       <p class="cc_item_title">
+        {{#ifEquals pricingType 'external'}}
+                                {{#if extName}}
+          <span class="cc_ext_name">{{displayProductName 'Aggregate_Display' displayProduct.sfdcName extName }}</span>
+         {{else}}
+          {{#if itemLabel}}
+           <span class="cc_ext_name">{{displayProductName 'Aggregate_Display' displayProduct.sfdcName itemLabel }}</span>
+          {{else}}
+           <span class="cc_ext_name">{{displayProductName 'Aggregate_Display' displayProduct.sfdcName product.sfdcName }}</span>
+          {{/if}}
+         {{/if}}
+        {{else}}
+         {{#if itemLabel}}
+          <span class="cc_ext_name">{{displayProductName 'Aggregate_Display' displayProduct.sfdcName itemLabel }}</span>
+         {{else}}
+          <span class="cc_ext_name">{{displayProductName 'Aggregate_Display' displayProduct.sfdcName product.sfdcName }}</span>
+         {{/if}}
+        {{/ifEquals}}
+       </p>
+
+       {{#ifContains this.pricingModifierTypes 'tiered'}}
+       <div class="cc_prt_tool_tip_div cc_prt_tool_tip_div_or" data-toggle="tooltip" title="{{pageLabelMap 'ProductPricingTiers_VolumeHover'}}">
+        <span class="cc_prt_tool_tip_text cc_prt_tool_tip_text_or">{{pageLabelMap 'ProductPricingTiers_VolumePricingApplied'}}</span>
+       </div>
+       {{/ifContains}}
+      </div>
+      <div class="col-md-4">
+       <div class="price cc_price">
+        {{#ifNotEquals this.cartItemType 'Coupon'}}
+        <p class="cc_order_quantity">
+         <span class="cc_quantity_label">{{pageLabelMap 'CartInc_Qty'}}&#58;&#160;</span>
+         <span class="cc_quantity">{{this.quantity}}</span>
+        </p>
+        <p class="cc_item_price">
+         {{#if this.price}}
+         <span class="cc_price_label">{{pageLabelMap 'CartInc_Price'}}&#58;&#160;</span>
+         <span class="cc_price">{{price this.price}}</span>
+         {{/if}}
+         {{#if this.absoluteDiscount}}
+         {{#ifGreater this.absoluteDiscount 0}}
+         <span class="cc_price_label">{{pageLabelMap 'Checkout_YouSave'}}&#58;&#160;</span>
+         <span class="cc_price">{{price this.absoluteDiscount}}</span>
+         {{/ifGreater}}
+         {{#ifLessThan this.absoluteDiscount 0}}
+         <span class="cc_price_label">{{pageLabelMap 'CartInc_Surcharge'}}&#58;&#160;</span>
+         <span class="cc_price">{{priceAbs this.absoluteDiscount}}</span>
+         {{/ifLessThan}}
+         {{/if}}
+        </p>
+        {{/ifNotEquals}}
+         <p class="cc_item_total">
+          <span class="cc_total_label">{{pageLabelMap 'CartInc_Total'}}&#58;&#160;</span>
+          <span class="cc_total">{{price this.itemTotal}}</span>
+         </p>
+         <p class="cc_external">
+          {{#ifEquals this.pricingType 'external'}}
+           {{#if this.extName}}
+            <span class="cc_ext_sku_label">{{pageLabelMap 'Checkout_SKU'}}&#58;&#160;</span>
+            <span class="cc_ext_sku">{{this.extSKU}}</span>
+           {{else}}
+            <span class="cc_checkout_sku_label">{{pageLabelMap 'Checkout_SKU'}}&#58;&#160;</span>
+            <span class="cc_checkout_sku">{{this.product.SKU}}</span>
+           {{/if}}
+          {{else}}
+           <span class="cc_checkout_sku_label">{{pageLabelMap 'Checkout_SKU'}}&#58;&#160;</span>
+           <span class="cc_checkout_sku">{{this.product.SKU}}</span>
+          {{/ifEquals}}
+         </p>
+         {{#if sellerName}}
+         <p class="cc_seller">
+          <span class="cc_soldby_label">{{pageLabelMap 'Prod_SoldBy'}}&#58;&#160;</span>
+          <span class="cc_soldby">{{sellerName}}</span>
+         </p>
+         {{/if}}
+         {{#if this.isSubscription}}
+         <p class="cc_subscription_summary">
+          {{subscriptionSummary 'Order_Subscription_' this.subscriptionFrequency mockProduct.sku itemTotal}}
+         </p>
+         <p class="cc_subscription_next_date">
+          {{pageLabelMap 'Order_Subscription_Next_Payment'}} {{this.nextSubscriptionDateStr}}
+         </p>
+         {{#if this.isLimitedSubscription}}
+         <p class="cc_subscription_summary">
+          {{pageLabelMap 'Order_Subscription_End_Date'}} {{this.subscriptionEndDateStr}}
+         </p>
+         {{/if}}
+        {{/if}}
+        {{#each minorLines}}
+         {{#if this.isSubscription}}
+          <p class="cc_subscription_summary">
+           {{subscriptionSummary 'Order_Subscription_' this.subscriptionFrequency mockProduct.sku itemTotal}}
+          </p>
+          <p class="cc_subscription_next_date">
+           {{pageLabelMap 'Order_Subscription_Next_Payment'}} {{this.nextSubscriptionDateStr}}
+          </p>
+          {{#if this.isLimitedSubscription}}
+          <p class="cc_subscription_end_date">
+           {{pageLabelMap 'Order_Subscription_End_Date'}} {{this.subscriptionEndDateStr}}
+          </p>
+          {{/if}}
+         {{/if}}
+        {{/each}}
+        {{#if this.minorLines}}
+         {{#ifNotEquals this.pricingType "attrGroup"}}
+          <p class="cc_included_items">
+           <a href="#included_items{{this.itemID}}" id="includedItemsLink" class="includedItemsLink cc_included_items_link" data-toggle="modal" data-id="{{this.itemID}}">{{pageLabelMap 'CheckOut_IncludedItems'}}</a>
+          </p>
+          <div id="included_items{{this.sfid}}" class="modal fade cc_modal cc_cart_included_items_modal" tabindex="-1" role="dialog" aria-hidden="true">
+           <div class="modal-dialog" role="document">
+            <div class="modal-content cc_modal_content">
+             <div class="modal-header">
+              <button type="button" class="close cc_close" data-dismiss="modal" aria-label="{{pageLabelMap 'Modal_Aria_Close'}}"><span aria-hidden="true">&#215;</span></button>
+              {{#ifEquals this.pricingType 'external'}}
+               {{#if extName}}
+                <h3 id="myModalLabel">{{this.extName}}&#58;&#160;{{pageLabelMap 'CheckOut_IncludedItems'}}</h3>
+               {{else}}
+                <h3 id="myModalLabel">{{this.product.sfdcName}}&#58;&#160;{{pageLabelMap 'CheckOut_IncludedItems'}}</h3>
+               {{/if}}
+              {{else}}
+               {{#if itemLabel}}
+                <h3 id="myModalLabel">{{this.itemLabel}}&#58;&#160;{{pageLabelMap 'CheckOut_IncludedItems'}}</h3>
+               {{else}}
+                <h3 id="myModalLabel">{{this.product.sfdcName}}&#58;&#160;{{pageLabelMap 'CheckOut_IncludedItems'}}</h3>
+               {{/if}}
+              {{/ifEquals}}
+             </div>
+             <div class="modal-body cc_modal-body modal-body_included_items{{this.sfid}}" id="included_items_body{{sfid}}">
+              <i class="fa fa-spinner fa-pulse fa-lg slds-m-top--medium"/>
+             </div>
+            </div>
+           </div>
+          </div>
+         {{/ifNotEquals}}
+        {{/if}}
+        {{#if this.minorLines}}
+        {{#ifEquals this.pricingType "attrGroup" }}
+        <p class="cc_cart_attribute_items">
+         <a href="#order_attribute_items{{this.itemID}}" id="orderAttributeItemsLink" class="orderAttributeItemsLink cc_attribute_items_link" data-toggle="modal" data-id="{{this.itemID}}">{{pageLabelMap 'CheckOut_AttributeItems'}}</a>
+        </p>
+        <div id="order_attribute_items{{this.itemID}}" class="modal fade cc_modal cc_order_attribute_items_modal" tabindex="-1" role="dialog" aria-hidden="true">
+         <div class="modal-dialog modal-lg" role="document">
+          <div class="modal-content cc_modal_content">
+           <div class="modal-header">
+            <button type="button" class="close cc_close" data-dismiss="modal" aria-label="{{pageLabelMap 'Modal_Aria_Close'}}"><span aria-hidden="true">&#215;</span></button>
+            <h3 id="myModalLabel">{{this.product.sfdcName}}:&#160;{{pageLabelMap 'CheckOut_AttributeItems'}}</h3>
+           </div>
+           <div class="modal-body cc_modal-body modal-order_attribute_items{{this.sfid}}" id="modal-order_attribute_items{{sfid}}">
+            <i class="fa fa-spinner fa-pulse fa-lg slds-m-top--medium"/>
+           </div>
+          </div>
+         </div>
+        </div>
+        {{/ifEquals}}
+        {{/if}}
+       </div>
+      </div>
+      {{/ifNotEquals}}
+      {{#ifEquals this.cartItemType 'Coupon'}}
+      <div class="col-md-8">
+       <p class="item_title coupon_title cc_coupon_title">
+        <span class="cc_label">{{pageLabelMap 'CartInc_AppliedCoupon'}}</span>
+        <span class="cc_value">{{this.product.sfdcName}}</span>
+       </p>
+      </div>
+      <div class="col-md-4">
+       <div class="price cc_price">
+        <p class="cc_item_total">
+         <span class="cc_total_label">{{pageLabelMap 'CartInc_Total'}}&#58;&#160;</span>
+         <span class="cc_total">{{price this.itemTotal}}</span>
+        </p>
+       </div>
+      </div>
+      {{/ifEquals}}
+     </div>
+     <hr>
+     {{/each}}-->
+    </div>
+   </div>
+  <!-- {{> totalsSection}}-->

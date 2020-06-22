@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ccrz__Status__c</fullName>
+    <defaultValue>&apos;Draft&apos;</defaultValue>
+    <deprecated>false</deprecated>
+    <description>Status of the content (published, draft...)</description>
+    <externalId>false</externalId>
+    <label>Status</label>
+    <length>255</length>
+    <required>true</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

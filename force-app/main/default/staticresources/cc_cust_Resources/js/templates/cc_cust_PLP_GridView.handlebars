@@ -1,0 +1,144 @@
+   <div class="cc_product_item cc_grid_item">
+      <div class="thumbnail">
+      <div class="cc_grid_image_container col-md-12">
+      {{#if EProductMediasS.[0]}}
+         {{productLink this 'cc_product_name_img' image=(displayImage this 'img-responsive center-block' src=(displayEProductMedia this.EProductMediasS.[0]) alt=this.EProductMediasS.[0].altMessage dataId=this.SKU)}}
+      {{/if}}
+      </div>
+      <div class="cc_grid_product_info caption">
+      <h5 class="cc_product_link linkColor">
+         {{#if this.alternateName}}
+         {{productLink this 'cc_product_name' text=this.alternateName}}
+         {{else}}
+         {{productLink this 'cc_product_name' text=this.sfdcName}}
+         {{/if}}
+      </h5>
+      {{#ifDisplay 'PL.DsplSku'}}
+         <p class="cc_product_sku">
+         <span class="cc_label">{{pageLabelMap 'ProductList_SKU'}}</span>
+         <span class="cc_product_sku">{{this.SKU}}</span>
+         </p>
+      {{/ifDisplay}}
+      {{#ifDisplay 'PL.DsplShortDesc'}}
+         <p class="description cc_desc">{{unescape shortDesc}}</p>
+      {{/ifDisplay}}
+      {{#ifDisplay 'PL.DsplAddtInfo'}}
+         <a class="included_items cc_included_items" href="#additional_info{{this.sfid}}" id="additionalInfoLink" data-toggle="modal">{{pageLabelMap 'ProductList_AdditionalInfo'}}</a>
+         <div id="additional_info{{this.sfid}}" class="modal fade cc_modal" tabindex="-1" role="dialog" aria-labelledby="ProductListItemLabel" aria-hidden="true">
+         <div class="modal-dialog cc_modal-dialog" role="document">
+         <div class="modal-content cc_modal-content">
+            <div class="modal-header cc_modal-header">
+            <button type="button" class="close cc_close" data-dismiss="modal" aria-label="{{pageLabelMap 'Modal_Aria_Close'}}"><span aria-hidden="true">&#215;</span></button>
+            <h3 class="cc_prod_list_item_label" id="ProductListItemLabel">
+            {{#if this.alternateName}}
+               {{this.alternateName}}
+            {{else}}
+               {{this.sfdcName}}
+            {{/if}}
+            {{pageLabelMap 'ProductList_MiscDetails'}}
+            </h3>
+            </div>
+            <div class="modal-body cc_body">
+            {{#if this.miscDetails}}
+            <span class="cc_misc_details">{{unescape this.miscDetails}}</span>
+            {{/if}}
+            {{#ifDisplay 'PL.DsplAddtlSku'}}
+            <span class="cc_sku">{{pageLabelMap 'ProductList_SKU'}}:</span>&#160;{{this.SKU}}<br/><br/>
+            {{/ifDisplay}}
+            {{#ifDisplay 'PL.DsplAddtlShortDesc'}}
+            <p class="cc_desc">{{unescape this.shortDesc}}</p>
+            {{/ifDisplay}}
+            </div>
+         </div>
+         </div>
+         </div>
+      {{/ifDisplay}}
+      {{#ifDisplay 'PL.DsplUOM'}}
+         <div class="cc_product_uom">
+         <span class="cc_label">{{pageLabelMap 'ProductList_UOM'}}</span>
+         <span class="cc_product_uom">{{pageLabelPrefixMap 'UOM_' this.unitOfMeasure}}</span>
+         </div>
+      {{/ifDisplay}}
+      </div>
+      {{#if this.b2BSupercededProductR}}
+      <div class="cc_part_Number">
+      Part number {{this.SKU}} has been replaced by 
+         <a href="{{#sitePrefix}}{{/sitePrefix}}/ccrz__ProductDetails?sku={{this.b2BSupercededProductR.SKU}}">{{this.b2BSupercededProductR.SKU}} </a>
+      </div>
+      {{/if}}
+      <div class="cc_price_container cc_grid_price_info caption hi">
+      {{#if this.EPriceListItemsS.[0].b2BExternallyPricedItem}}
+         <div class="cc_price price">
+            <span class="price cc_price textRed b2b_price_msg">{{pageLabelMap  'plp_price_msg'}}</span>
+            <br>
+        </div>
+     {{else}}   
+     {{#if this.EPriceListItemsS.[0].b2BPromoPricedItem}}
+         <div class="cc_price price">
+            <span class="price cc_price cc_base_price_label b2b_promo_price">{{price  this.EPriceListItemsS.[0].b2BPromoBasisPrice}}</span>
+         </div>
+      {{/if}}
+      {{#if this.productPricingData.productPrice.price}}
+         <div class="cc_price price">
+            <span class="price cc_price textRed">{{price this.productPricingData.productPrice.price}}</span>
+            {{#if this.EPriceListItemsS.[0].b2BPromoPricedItem}}
+                  <span class="price cc_price b2b_price_sale_label">{{pageLabelMap 'Price_Sale'}}</span> 
+            {{/if}}
+            <br/>
+            {{#if this.productPricingData.productPrice.itemType }}
+            <span class="cc_label"><i class="fa fa-info-circle cc_prt_tool_tip_icon hi"></i> Volume Pricing Available</span>
+            {{/if}}
+        </div>
+        {{/if}} 
+      {{#if this.EPriceListItemsS.[0].b2BShowPromoEndDate}}
+         <div class="cc_price price">
+            <span class="cc_label b2b_price_endDate_label hi">{{pageLabelMap 'Price_Ends'}}</span>
+            <span class="endDate cc_End_Date b2b_price_endDate">{{date this.EPriceListItemsS.[0].endDate}}</span>
+         </div>
+         {{/if}}
+         {{/if}}
+      </div>
+      <div class="cc_product_grid_actions">
+      <div class="messagingSection-Warning-{{this.sfid}}" style="display: none"></div>
+      <div class="messagingSection-Info-{{this.sfid}}" style="display: none"></div>
+      <div class="messagingSection-Error-{{this.sfid}}" style="display: none"></div>
+      {{#ifDisplay 'PL.DsplAddCart'}}
+         {{#unless this.showNewSubscriptionSelection}}
+         {{#if this.canAddtoCart}}
+         {{> productQuantityControls}}
+         <div class="action cc_action wishFinder">
+            <div class="cc_add_to form-group">
+            <button class="btn btn-default center-block cc_add_to_btn cc_add_to_btn_{{this.sfid}}" role="button">{{pageLabelMap 'ProductList_AddToCart'}}</button>
+            </div>
+         </div>
+         {{/if}}
+         {{/unless}}
+      {{/ifDisplay}}
+      {{#ifDisplay 'PCP.Enabled'}}
+         {{#ifEquals this.productType 'Product'}}
+         <div class="hidden-xs cc_compare form-group">
+         <button type="button" class="btn btn-default btn-sm btn-block add_to_compare_desktop_button cc_addto_compare {{#if inCompareTray}}active{{else}}{{#if compareTrayFull}}disabled{{/if}}{{/if}}">
+            {{#if inCompareTray}}
+            {{pageLabelMap 'ProductCompare_RemoveFromCompare'}}
+            {{else}}
+            {{pageLabelMap 'ProductCompare_AddToCompare'}}
+            {{/if}}
+         </button>
+         </div>
+         {{/ifEquals}}
+      {{/ifDisplay}}
+      {{#ifNotEquals this.productType 'Aggregated'}}
+         {{#unless this.showNewSubscriptionSelection}}
+         {{#if this.b2BSupercededProductR}}
+         {{else}}
+         <div class="cc_wishlist">
+         <div class="wishFinder" data-sku="{{this.SKU}}">
+            <div class="wishButtons"></div>
+         </div>
+         </div>
+         {{/if}}
+         {{/unless}}
+      {{/ifNotEquals}}
+      </div>
+      </div>
+   </div>

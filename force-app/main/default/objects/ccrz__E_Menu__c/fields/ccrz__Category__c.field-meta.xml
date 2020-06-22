@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ccrz__Category__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <description>Reference to a CC Category object, if Link Type is set to Category.</description>
+    <externalId>false</externalId>
+    <label>Category</label>
+    <referenceTo>ccrz__E_Category__c</referenceTo>
+    <relationshipLabel>CC Category Menu Items</relationshipLabel>
+    <relationshipName>CC_Category_Menu_Items</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

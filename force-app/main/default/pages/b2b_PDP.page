@@ -1,0 +1,18 @@
+<!--
+  @File Name          : b2b_PDP.page  
+  @Description        : 
+  @Author             : Rajesh Kumar
+  @Group              : 
+  @Last Modified By   : Rajesh Kumar
+  @Last Modified On   : 4/10/2020, 3:34:46 PM
+  @Modification Log   : 
+  Ver       Date            Author      		    Modification
+  1.0    4/8/2020   Rajesh Kumar     Initial Version
+-->
+<apex:page id="b2b_customPdp_page" controller="b2b_customPdpController" docType="html-5.0" sidebar="false" showHeader="false" standardStylesheets="false" applyHtmlTag="false">
+    <script>
+    r(['ccrz', 'util', 'customPDPView'], function(CCRZ, UTIL, customPDPView){
+      customPDPView.extendcustomPDPView();
+    });
+    </script>
+</apex:page>

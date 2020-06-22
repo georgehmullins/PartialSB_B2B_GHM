@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>B2B_ShipVia_Override__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>Ship-Via default override for related B2B user during checkout on website.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Ship-Via default override for related B2B user during checkout on website.</inlineHelpText>
+    <label>B2B ShipVia Override</label>
+    <referenceTo>ccrz__E_ShippingRate__c</referenceTo>
+    <relationshipLabel>B2BContacts</relationshipLabel>
+    <relationshipName>B2BContacts</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Lookup</type>
+</CustomField>

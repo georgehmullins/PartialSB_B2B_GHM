@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Activity_Report_Prior_Week__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Check box to generate A/R report for the Prior Work Week (FINAL Report).</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Check box to generate A/R report for the Prior Work Week (FINAL Report).</inlineHelpText>
+    <label>Activity Report Prior Week</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>B2B_Community_Contacts</fullName>
+    <columns>FULL_NAME</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>CONTACT.TITLE</columns>
+    <columns>CONTACT.PHONE1</columns>
+    <columns>CONTACT.EMAIL</columns>
+    <columns>Contact_Status__c</columns>
+    <columns>B2B_Account_Number__c</columns>
+    <columns>B2B_Community_User__c</columns>
+    <columns>B2B_Customer__c</columns>
+    <columns>B2B_Web_User_ID__c</columns>
+    <columns>CONTACT.LAST_UPDATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>B2B_Community_User__c</field>
+        <operation>notEqual</operation>
+    </filters>
+    <label>B2B Community Contacts</label>
+    <sharedTo>
+        <roleAndSubordinatesInternal>Admin</roleAndSubordinatesInternal>
+    </sharedTo>
+</ListView>

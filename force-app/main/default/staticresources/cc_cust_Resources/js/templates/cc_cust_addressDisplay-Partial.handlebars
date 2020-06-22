@@ -1,0 +1,62 @@
+<div class="address_selection_display hi">
+   {{#ifDisplay 'SO.DsplAddrName'}}
+    {{#if this.firstName }}
+     <p class="cc_addr_name">
+      <span class="cc_firstname">{{this.firstName}}&#160;</span>
+      {{#if this.lastName }}
+       <span class="cc_lastname">{{this.lastName}}</span>
+      {{/if}}
+     </p>
+    {{else}}
+     {{#if this.lastName }}
+      <p class="cc_addr_name">
+       <span class="cc_lastname">{{this.lastName}}</span>
+      </p>
+     {{/if}}
+    {{/if}}
+
+   {{/ifDisplay}}
+   {{#ifDisplay 'SO.DsplAddrCompany'}}
+    {{#if this.companyName}}
+     <p class="cc_addr_company hey">{{this.companyName}}</p>
+    {{/if}}
+   {{/ifDisplay}}
+   {{#if this.address1}}
+    <span class="addr_line1 cc_addr_line">{{this.address1}}</span><br/>
+   {{else}}
+    {{#if this.addressFirstline}}
+     <span class="addr_line1 cc_addr_line">{{this.addressFirstline}}</span><br/>
+    {{/if}}
+   {{/if}}
+
+   {{#if this.address2}}
+    <span class="addr_line2 cc_addr_line">{{this.address2}}</span><br/>
+   {{else}}
+    {{#if this.addressSecondline}}
+     <span class="addr_line1 cc_addr_line">{{this.addressSecondline}}</span><br/>
+    {{/if}}
+   {{/if}}
+
+   {{#if this.address3}}
+    <span class="addr_line3 cc_addr_line">{{this.address3}}</span><br/>
+   {{else}}
+    {{#if this.addressThirdline}}
+     <span class="addr_line1 cc_addr_line">{{this.addressThirdline}}</span><br/>
+    {{/if}}
+   {{/if}}
+   <span class="cc_addr_city">{{this.city}}</span>
+   {{#if this.state}}
+    <span class="cc_addr_state">&#44;&#160;{{this.state}}</span>
+   {{else}}
+    {{#if this.stateCode}}
+     <span class="cc_addr_state">&#44;&#160;{{this.stateCode}}</span>
+    {{else}}
+     {{#if this.stateISOCode}}
+      <span class="cc_addr_state">&#44;&#160;{{this.stateISOCode}}</span>
+     {{/if}}
+    {{/if}}
+   {{/if}}
+   <span class="cc_addr_postal">&#160;{{this.postalCode}}</span><br/>
+   <span class="cc_addr_country">{{this.country}}</span><br/>
+   <span class="cc_addr_extId">{{this.partnerId}}</span>
+  </div>

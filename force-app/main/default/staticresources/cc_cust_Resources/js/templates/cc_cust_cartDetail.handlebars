@@ -1,0 +1,44 @@
+            <div class="panel panel-default cc_panel cc_panel_shopping_cart cc_cart2">
+                <div class="panel-body cc_body">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <h2 class="title cc_title">{{pageLabelMap 'CartInc_ShoppingCart'}}</h2>
+                                <!--WESCO FREIGHT -->
+                                <div class="cart_freefreight">                               
+                                        <div class="media cart_freefreight">
+                                            <div class="media-left">
+                                                {{#if this.b2BFreightReviewCode}}
+                                             <!--       <div>{{this.b2BFreightReviewCode}}</div> -->
+                                                    <img src="{{pageLabelMap 'B2B_FreeFreightPrefix_Url'}}{{this.b2BFreightReviewCode}}.gif"  class="media-object" style="width:300px">
+                                                    <br>  
+                                                {{/if}}
+                                            </div>
+                                        </div>
+                             
+                                </div>
+                                <!--END WESCO FREIGHT --> 
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div id="cart_items_container" class="cc_cart_item_container">
+                                {{> headerSection}}
+                                <div class="cart_item_list cc_cart_item_list">
+                                    {{#if this.ECartItemsS}}
+                                        {{#each this.ECartItemsS.models}}
+                                            <div class="cart_item {{this.attributes.sfid}} cc_cart_item" data-sku="{{this.attributes.product.SKU}}">
+                                                {{> cartItemsDesktop}}
+                                            </div>
+                                        {{/each}}
+                                    {{/if}}
+                                </div>
+                            </div>
+                            {{> emailModal}}
+                            {{> rfqModal}}
+                            {{> wishModal}}
+                            {{> actionsTotals}}
+                        </div>
+                    </div>
+                </div>
+                <div id="modalSec"></div>
+            </div>

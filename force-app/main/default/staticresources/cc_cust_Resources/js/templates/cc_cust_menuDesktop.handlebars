@@ -1,0 +1,83 @@
+  <div id="secnav cc_secnav">
+    <nav class="navbar navbar-default navbar-static-top cc_navbar">
+      <div class="container cc_container">
+      <div class="navbar-header cc_navbar_header">
+        <button type="button" class="navbar-toggle collapsed cc_navbar_toggle" data-toggle="collapse" data-target="#navbar"
+        aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">{{pageLabelMap 'Menu_ToggleNavigation'}}</span>
+          <!--***********-->
+          <span class="icon-bar cc_icon-bar"></span>
+          <span class="icon-bar cc_icon-bar"></span>
+          <span class="icon-bar cc_icon-bar"></span>
+        </button>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse cc_navbar_collapse">
+        <ul class="nav navbar-nav cc_navbar-nav">
+        <li>{{goHome this 'cc_phone_logo' 'phoneLogo' icon=(displayIcon 'home')}}<span class="sr-only">{{pageLabelMap 'Menu_Home'}}</span></li>
+        {{#each .}}
+          {{#if children}}
+          <li class="dropdown cc_dropdown">
+            <a href="{{linkURL}}" class="dropdown-toggle cc_dropdown_toggle" data-toggle="dropdown" data-menuid="{{menuId}}" {{linkTarget openInNewWindow}} role="button" aria-haspopup="true" aria-expanded="false">{{displayName}}<span class="caret"></span></a>
+            <ul class="dropdown-menu cc_dropdown-menu">
+            {{> subMenuItem}}
+            </ul>
+          </li>
+          {{else}}
+          {{#ifEquals mType 'Category'}}
+            <li class="dropdown cc_dropdown">{{categoryLink this 'cc_category' text=displayName}}</li>
+          {{/ifEquals}}
+          {{#ifEquals mType 'Product'}}
+            <li class="dropdown cc_dropdown">{{productLink this 'cc_product' text=displayName}}</li>
+          {{/ifEquals}}
+          {{#ifEquals mType 'URL'}}
+            <li class="dropdown cc_dropdown"><a class="menuTypeURL cc_menu_type_url" href="{{linkURL}}" data-href="{{linkURL}}" data-menuid="{{menuId}}" {{linkTarget openInNewWindow}}>{{displayName}}</a></li>
+          {{/ifEquals}}
+          {{#ifEquals mType 'None'}}
+            <li class="dropdown cc_dropdown"><a href="javascript:void(0);" class="cc_display_name" data-menuid="{{menuId}}">{{displayName}}</a></li>
+          {{/ifEquals}}
+          {{/if}}
+        {{/each}}
+        </ul>
+      </div><!--***************-->
+
+        {{#showNewMenu}}
+          <div id="custom_mega_menu" class="navbar">
+            {{#each .}}
+            
+              {{#if children}}
+                <div class="dropdown-main">
+                  <div class="dropbtn">
+                    <a href="{{linkURL}}">{{displayName}} </a>
+                  </div>
+                  <div class="dropdown-content">
+                      <div class="row">
+                        {{> megaMenu}}
+                      </div>
+                  </div>
+                </div>
+                {{else}}
+                  <div class="dropdown-main">
+                    <div class="dropbtn">
+                      {{#ifEquals mType 'Category'}}
+                        {{categoryLink this 'cc_category' text=displayName}}
+                      {{/ifEquals}}
+                      {{#ifEquals mType 'Product'}}
+                        {{productLink this 'cc_product' text=displayName}}
+                      {{/ifEquals}}
+                      {{#ifEquals mType 'URL'}}
+                        <a class="" href="{{linkURL}}" data-href="{{linkURL}}" data-menuid="{{menuId}}" {{linkTarget openInNewWindow}}>{{displayName}}</a>
+                      {{/ifEquals}}
+                      {{#ifEquals mType 'None'}}
+                        <a href="javascript:void(0);" class="cc_display_name" data-menuid="{{menuId}}">{{displayName}}</a>
+                      {{/ifEquals}}
+                    </div>
+                  </div>
+              {{/if}}
+            
+            {{/each}}
+            </div> 
+          </div>
+        {{/showNewMenu}}
+      </div>
+    </nav>
+    </div>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Fort_Myers_and_Naples_Email</fullName>
+    <booleanFilter>(1 OR 2) AND 3 AND 4 AND 5</booleanFilter>
+    <columns>FULL_NAME</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>CONTACT.TITLE</columns>
+    <columns>CONTACT.PHONE1</columns>
+    <columns>CONTACT.EMAIL</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Account_City__c</field>
+        <operation>equals</operation>
+        <value>Naples</value>
+    </filters>
+    <filters>
+        <field>Account_City__c</field>
+        <operation>equals</operation>
+        <value>Fort Myers</value>
+    </filters>
+    <filters>
+        <field>Account_Industry__c</field>
+        <operation>equals</operation>
+        <value>Golf Course</value>
+    </filters>
+    <filters>
+        <field>Contact_Status__c</field>
+        <operation>equals</operation>
+        <value>Active</value>
+    </filters>
+    <filters>
+        <field>CONTACT.EMAIL</field>
+        <operation>notEqual</operation>
+    </filters>
+    <label>Fort Myers and Naples Email</label>
+    <language>en_US</language>
+    <sharedTo>
+        <role>Admin</role>
+        <role>Executive_Team</role>
+    </sharedTo>
+</ListView>

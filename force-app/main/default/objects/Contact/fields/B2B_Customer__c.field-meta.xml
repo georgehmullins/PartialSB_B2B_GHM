@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>B2B_Customer__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Wesco B2B Website contact.  Going to use box to send contact info to Prelude to create web user.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Wesco B2B Website contact.  Going to use box to send contact info to Prelude to create web user.</inlineHelpText>
+    <label>B2B Customer</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

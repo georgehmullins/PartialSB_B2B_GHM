@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ccrz__Sequence__c</fullName>
+    <defaultValue>500</defaultValue>
+    <deprecated>false</deprecated>
+    <description>Sequence in which the Menu links should be displayed. Menu Record with the smallest sequence is displayed first, starting from the left in desktop view, and starting from the top in tablet/mobile view.</description>
+    <externalId>false</externalId>
+    <label>Sequence</label>
+    <precision>5</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Competitive_Conversion__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Checkbox needs to be reset after each Travel Incentives period (toro FY)</description>
+    <externalId>false</externalId>
+    <inlineHelpText>For Toro Travel Incentives tracking</inlineHelpText>
+    <label>Competitive Conversion</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

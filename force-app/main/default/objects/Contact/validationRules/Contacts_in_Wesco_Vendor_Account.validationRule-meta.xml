@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Contacts_in_Wesco_Vendor_Account</fullName>
+    <active>true</active>
+    <description>stop users from creating contacts in Vendor Acccount</description>
+    <errorConditionFormula>Account.Name  = &quot;WESCO TURF - INTERNAL&quot; &amp;&amp;  TEXT(Account.Type) = &quot;Vendor&quot;</errorConditionFormula>
+    <errorMessage>You cannot create a contact for Wesco Turf Internal Vendor Account. Please contact your administrator for assistance.</errorMessage>
+</ValidationRule>

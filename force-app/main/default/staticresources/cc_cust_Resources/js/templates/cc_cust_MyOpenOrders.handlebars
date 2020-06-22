@@ -1,0 +1,66 @@
+    <div class="panel panel-default cc_panel cc_myaccount_myorders">
+        <div class="panel-heading cc_heading">
+        <h3 class="panel-title cc_title">{{pageLabelMap 'Open Orders'}}</h3>
+        </div>
+        <div class="panel-body cc_body cc_myaccount_content">
+        <div class="messagingSection-orderhistory-Error" role="alert" style="display: none"></div>
+        <div class="messagingSection-orderhistory-Info" role="alert" style="display: none">
+        <button type="button" class="close cc_close" data-dismiss="alert" aria-label="{{pageLabelMap 'Modal_Aria_Close'}}"><span aria-hidden="true">&#215;</span></button>
+        </div>
+        
+        </div>
+    </div>
+    <div class="orderPaginationSec" />
+    <div class="panel panel-default cc_panel cc_paginator">
+        <div class="table-responsive">
+            <table id="orderTable" class="table table-hover shopping_cart cc_table cc_order_search_table">
+                <tr class="cc_table_header_row">
+                    <th class="cc_table_header">
+                        <span class="cc_table_header_order_number">{{pageLabelMap 'MyOrdersInc_OrderNumber'}}</span>
+                    </th>           
+                    
+                    <th class="cc_table_header">
+                        <span class="cc_table_header_order_date">{{pageLabelMap 'MyOrdersInc_OrderDate'}}</span>
+                    </th>
+                    <th class="cc_table_header">
+                        <span class="cc_table_header_po_number">{{pageLabelMap 'PO Number'}}</span>
+                    </th>
+                    <th class="cc_table_header">
+                        <span class="cc_table_header_order_actions">{{pageLabelMap 'Ship To Desc.'}}</span>
+                        </th>
+                    <th class="cc_table_header">
+                        <span class="cc_table_header_order_amount">{{pageLabelMap 'MyOrdersInc_OrderAmount'}}</span>
+                    </th>
+                    <th class="cc_table_header">
+                        <span class="cc_table_header_order_status">{{pageLabelMap 'MyOrdersInc_Status'}}</span>
+                    </th>
+
+                </tr>
+                {{#each this.orders}}
+                    <tr class="myAccOrderRows cc_table_row">
+                        <td class="cc_table_col">
+                            <span class="cc_col_order_number"><a href="ccrz__CCPage?pageKey=openOrder&oid={{ord_ref_num}}&adni={{id_address_dni}}" data-id="{{ord_ref_num}}" class="gotoOrderDetails cc_goto_order_detailss">{{ord_ref_num}}</a></span>
+                        </td>
+                        <td class="cc_table_col">
+                            <span class="cc_col_order_date">{{order_date}}</span>
+                        </td>
+                        <td class="cc_table_col">
+                            <span class="cc_col_po_number">{{po_number}}</span>
+                        </td>
+                        
+                        <td class="cc_table_col">
+                            <span class="cc_col_order_amount">{{{shipto_name}}}</span>
+                        </td>
+                        <td class="cc_table_col">
+                            <span class="cc_col_order_amount">{{price merch_total}}</span>
+                        </td>
+                        
+                        <td class="cc_table_col">
+                            <span class="cc_col_order_status">{{order_status}}</span>
+                        </td>
+                    </tr>
+                {{/each}}
+            </table>
+        </div>
+        <div id="modalSec"></div>
+    </div>

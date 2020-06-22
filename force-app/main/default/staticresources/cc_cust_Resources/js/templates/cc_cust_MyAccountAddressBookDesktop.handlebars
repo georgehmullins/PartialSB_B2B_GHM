@@ -1,0 +1,58 @@
+<div class="panel panel-default cc_panel cc_myaccount_changePassword custom">
+   <div class="panel-heading cc_heading">
+    <h3 class="panel-title cc_title">{{pageLabelMap 'MyAccount_AddressBook'}}</h3>
+   </div>
+   <div class="panel-body cc_body">
+    <div class="messagingSection-addressBook-Error" style="display: none"></div>
+    <div class="messagingSection-addressBook-Warning" style="display: none"></div>
+    <div class="messagingSection-addressBook-Info" style="display: none"></div>
+    {{!-- <p class="cc_add_address">
+     {{#if preventAddrEdit}} {{else}} <button type="button" class="addAddress btn btn-default btn-sm cc_add_address_btn" data-id="">{{pageLabelMap 'AddressBook_Add_New_Address'}}</button>{{/if}}
+    </p> --}}
+   </div>
+  </div>
+  <div class="orderPaginationSec" />
+  <div class="panel panel-default cc_panel cc_myaccount_addresses">
+   <div class="table-responsive">
+    <table id="addressListTable" class="table table-hover cc_table cc_address_list">
+     <thead class="cc_table_header_row">
+      <th class="cc_address_header">
+       {{pageLabelMap 'Address'}}
+      </th>
+      {{#ifDisplay 'addr.shAdrTy'}}
+      <th class="cc_address_type_header">
+       {{pageLabelMap 'ProductDetails_DocumentTab_Type'}}
+      </th>
+      {{/ifDisplay}}
+      {{!-- {{#if preventAddrEdit}} {{else}}
+       <th class="cc_address_controls"></th>
+      {{/if}} --}}
+     </thead>
+     <tbody>
+     {{#each this.addressList}}
+      <tr class="cc_address{{sfid}}">
+       <td class="cc_address_display">
+        {{> addressDisplay this.addressBean}}
+       </td>
+       {{#ifDisplay 'addr.shAdrTy'}}
+       <td class="cc_address_type">
+        {{#each addressTypes}}
+         <div class="status cc_address_type_value">{{pageLabelMap addressType}}</div>
+        {{/each}}
+       </td>
+       {{/ifDisplay}}
+       {{!--{{#if ../preventAddrEdit}} {{else}}
+       <td class="cc_address_control">
+         <button type="button" class="openModalAddr btn btn-default btn-sm cc_open_modal_addr" data-id="{{sfid}}">{{pageLabelMap 'Action_Edit'}}</button>&#160;
+        {{#if this.addressBean.addrReadOnly}} {{else}}
+        <button type="button" class="deleteAddress btn btn-default btn-sm cc_delete_addr" data-id="{{sfid}}">{{pageLabelMap 'Action_Delete'}}</button>&#160;
+        {{/if}} 
+       </td>
+       {{/if}}--}}
+      </tr>
+     {{/each}}
+     </tbody>
+    </table>
+   </div>
+  </div>
+  <div id="modalSec"></div>

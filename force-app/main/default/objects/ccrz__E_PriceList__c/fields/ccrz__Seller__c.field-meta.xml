@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ccrz__Seller__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <description>Seller this Price List belongs to.</description>
+    <externalId>false</externalId>
+    <label>Seller</label>
+    <referenceTo>ccrz__E_Seller__c</referenceTo>
+    <relationshipLabel>CC Price Lists</relationshipLabel>
+    <relationshipName>E_PriceLists</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

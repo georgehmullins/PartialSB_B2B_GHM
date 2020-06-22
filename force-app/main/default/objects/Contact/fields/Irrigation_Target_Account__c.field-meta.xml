@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Irrigation_Target_Account__c</fullName>
+    <description>Irrigation Target Account flagged on Account to choose contact</description>
+    <externalId>false</externalId>
+    <formula>IF( (HasOptedOutOfEmail &lt;&gt; TRUE) &amp;&amp;  (TEXT(Contact_Status__c) = &#39;Active&#39;)  &amp;&amp; Account.Irrigation_Target_Account__c &amp;&amp;  NOT(ISBLANK(Email)) , TRUE, FALSE)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Irrigation Target Account</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

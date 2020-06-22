@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ccrz__RecurringPrice__c</fullName>
+    <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
+    <description>Should be checked if this PriceListItem is pricing a SubProdTerm</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Check if this price is for a subscription term AND this is the recurring price for that term.</inlineHelpText>
+    <label>Recurring Price</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ccrz__Storefront__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Mulit-select list that allows you to assign the pricelist to one or more storefronts.</description>
+    <externalId>false</externalId>
+    <label>Storefront</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>DefaultStore</fullName>
+                <default>false</default>
+                <label>DefaultStore</label>
+            </value>
+            <value>
+                <fullName>WescoUsed</fullName>
+                <default>false</default>
+                <label>WescoUsed</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

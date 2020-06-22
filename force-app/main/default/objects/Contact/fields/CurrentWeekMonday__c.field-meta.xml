@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CurrentWeekMonday__c</fullName>
+    <description>Current Week Monday&#39;s date</description>
+    <externalId>false</externalId>
+    <formula>CASE(
+  MOD( TODAY() - DATE( 1900, 1, 8 ), 7 ),
+  0, TODAY(),
+  1, TODAY()-2,
+  2, TODAY()-3,
+  3, TODAY()-4,
+  4, TODAY()-5,
+  5, TODAY()-6, 
+  TODAY()-7
+)</formula>
+    <inlineHelpText>Current Week Monday&#39;s Date</inlineHelpText>
+    <label>CurrentWeekMonday</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Date</type>
+</CustomField>

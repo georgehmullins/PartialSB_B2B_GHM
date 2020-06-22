@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ccrz__NewWindow__c</fullName>
+    <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
+    <description>Flag to determine to open this Menu link in a new window or not.</description>
+    <externalId>false</externalId>
+    <label>New Window</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

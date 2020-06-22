@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Fort_Myers_and_Naples_Email_v2</fullName>
+    <booleanFilter>1 AND 2 AND 3 AND 4 AND 5 AND (6 OR 7)</booleanFilter>
+    <columns>FULL_NAME</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>CONTACT.TITLE</columns>
+    <columns>CONTACT.PHONE1</columns>
+    <columns>CONTACT.EMAIL</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>Account_County__c</columns>
+    <columns>Account_City__c</columns>
+    <columns>Account_Industry__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Account_City__c</field>
+        <operation>notEqual</operation>
+        <value>Naples</value>
+    </filters>
+    <filters>
+        <field>Account_City__c</field>
+        <operation>notEqual</operation>
+        <value>Fort Myers</value>
+    </filters>
+    <filters>
+        <field>Account_Industry__c</field>
+        <operation>equals</operation>
+        <value>Golf Course</value>
+    </filters>
+    <filters>
+        <field>Contact_Status__c</field>
+        <operation>equals</operation>
+        <value>Active</value>
+    </filters>
+    <filters>
+        <field>CONTACT.EMAIL</field>
+        <operation>notEqual</operation>
+    </filters>
+    <filters>
+        <field>Account_County__c</field>
+        <operation>equals</operation>
+        <value>Lee</value>
+    </filters>
+    <filters>
+        <field>Account_County__c</field>
+        <operation>equals</operation>
+        <value>Collier</value>
+    </filters>
+    <label>Fort Myers and Naples Email v2</label>
+    <language>en_US</language>
+    <sharedTo>
+        <role>Admin</role>
+        <role>Executive_Team</role>
+    </sharedTo>
+</ListView>

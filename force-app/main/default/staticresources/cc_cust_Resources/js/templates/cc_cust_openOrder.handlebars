@@ -1,0 +1,102 @@
+<div class="openOrder-content">
+   <div id="columns" class="container">
+      <div class="row">
+         <p class="pull-right">
+            <a href="#" class="orderHistory cc_order_history">Open Orders</a>
+         </p>
+         <div id="center_column" class="center_column col-xs-12 col-sm-12 col-md-12">
+            <h1 class="page-heading">Open Order Detail</h1>
+            <form  name="FormAddToCart" id="FormAddToCart">
+               <div class="row mb20">
+                  <div class="col-lg-4 col-md-4 col-xs-12">
+                     <div class="row pb5">
+                        <div class="col-lg-5 col-md-5 col-sm-3 col-xs-4 text-right"><span class="bold">Order#:</span></div>
+                        <div class="col-lg-7 col-md-7 col-sm-9 col-xs-8">{{this.orders.ord_ref_num}}</div>
+                     </div>
+                     <div class="row pb5">
+                        <div class="col-lg-5 col-md-5 col-sm-3 col-xs-4 text-right"><span class="bold">Contact:</span></div>
+                        <div class="col-lg-7 col-md-7 col-sm-9 col-xs-8">{{this.orders.contact_name}}</div>
+                     </div>
+                     <div class="row pb5">
+                        <div class="col-lg-5 col-md-5 col-sm-3 col-xs-4 text-right"><span class="bold">Customer P/O#:</span></div>
+                        <div class="col-lg-7 col-md-7 col-sm-9 col-xs-8">{{this.orders.po_number}}</div>
+                     </div>
+                  </div>
+                  <div class="col-lg-4 col-md-4 col-xs-12">
+                     <div class="row pb5">
+                        <div class="col-lg-5 col-md-5 col-sm-3 col-xs-4 text-right"><span class="bold">Order Date:</span></div>
+                        <div class="col-lg-7 col-md-7 col-sm-9 col-xs-8">{{this.orders.order_date}}</div>
+                     </div>
+                     <div class="row pb5">
+                        <div class="col-lg-5 col-md-5 col-sm-3 col-xs-4 text-right"><span class="bold">Ship Via:</span></div>
+                        <div class="col-lg-7 col-md-7 col-sm-9 col-xs-8">{{this.orders.ship_via_desc}}</div>
+                     </div>
+                     <div class="row pb5">
+                        <div class="col-lg-5 col-md-5 col-sm-3 col-xs-4 text-right"><span class="bold">Terms:</span></div>
+                        <div class="col-lg-7 col-md-7 col-sm-9 col-xs-8">{{this.orders.payment_terms}}              </div>
+                     </div>
+                  </div>
+                  <div class="col-lg-4 col-md-4 col-xs-12">
+                     <div class="row pb5">
+                        <div class="col-lg-5 col-md-5 col-sm-3 col-xs-4 text-right"><span class="bold">Ship-to:</span></div>
+                        <div class="col-lg-7 col-md-7 col-sm-9 col-xs-8">
+                           {{{this.orders.shipto_name}}}<br/>{{{this.orders.shipto_addr1}}}<br> {{{this.orders.shipto_addr2}}}<br>{{{this.orders.shipto_csz}}}
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="row ">
+                  <div class="col-lg-12">
+                     <div class="table-responsive clearfix order-history">
+                        <table class="table  table-order-history ">
+                           <thead>
+                              <tr>
+                                 <th class="col-lg-2">{{pageLabelMap 'OrderSummaryNew_Product'}}</th>
+                                 <th class="col-lg-3">{{pageLabelMap 'OrderSummaryNew_ProductDescription'}}</th>
+                                 
+                                 <th class="col-lg-1 text-center">{{pageLabelMap 'OrderSummaryNew_ProductQTY'}}</th>
+                                 <th class="col-lg-1 text-center toUppercase">{{pageLabelMap 'Shipped'}}</th>
+                                 <th class="col-lg-1 text-center">{{pageLabelMap 'B2B_BackOrder'}}</th>
+                                 <th class="col-lg-2 text-center">{{pageLabelMap 'OrderSummaryNew_ProductPRICE'}}</th>
+                                 <th class="col-lg-2 text-center">{{pageLabelMap 'OrderSummaryNew_ProductTOTAL'}}</th> 
+                              </tr>
+                           </thead>
+                           <tbody>
+                              {{#each this.orders.lineItemList}}
+                              <tr>
+                                 <td>
+                                    {{{this.prod_num}}} 
+                                 </td>
+                                 <td>
+                                    {{{ this.prod_desc1}}}
+                                    <br>{{{ this.prod_desc2}}}   
+                                 </td>
+                                 <td class="text-center">{{this.ord_qty}}</td>
+                                 <td class="text-center"></td>
+                                 <td class="text-center">{{this.bo_qty}}</td>
+                                 <td class="text-center">{{price this.net_price}}</td>
+                                 <td class="text-center">{{price this.ext_net_price}}</td>
+                              </tr>
+                              {{/each}}
+                           </tbody>
+                        </table>
+                     </div>
+                  </div>
+               </div>
+            </form>
+            <div class="row ">
+               <div class="col-lg-3 col-xs-12 pull-right text-right">
+                  <div class="row">
+                     <div class="col-lg-8 col-xs-7"><span class="bold">Merchandise Total</span></div>
+                     <div class="col-lg-4 col-xs-5">{{price this.orders.merch_total}}</div>
+                     <div class="col-lg-12 col-xs-12"><span class="bold">*Tax and shipping will be shown on Invoice</span></div>
+                     
+                  </div>
+               </div>
+            </div>
+         </div>
+         <!-- #center_column -->
+      </div>
+      <!-- .row -->
+   </div>
+</div>

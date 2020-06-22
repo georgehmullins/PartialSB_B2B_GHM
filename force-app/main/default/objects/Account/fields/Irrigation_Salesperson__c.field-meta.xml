@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Irrigation_Salesperson__c</fullName>
+    <description>This is the primary Irrigation Sales person assigned to the account.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>This is the primary Irrigation Sales person assigned to the account.</inlineHelpText>
+    <label>Irrigation Salesperson</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>501 - Bo Irby</fullName>
+                <default>false</default>
+                <label>501 - Bo Irby</label>
+            </value>
+            <value>
+                <fullName>502 - Andrew Johnston</fullName>
+                <default>false</default>
+                <label>502 - Andrew Johnston</label>
+            </value>
+            <value>
+                <fullName>504 - Tina Neuzil</fullName>
+                <default>false</default>
+                <label>504 - Tina Neuzil</label>
+            </value>
+            <value>
+                <fullName>505 - Tim Denton</fullName>
+                <default>false</default>
+                <label>505 - Tim Denton</label>
+            </value>
+            <value>
+                <fullName>513 - Ralph Silletti (Flownet)</fullName>
+                <default>false</default>
+                <label>513 - Ralph Silletti (Flownet)</label>
+            </value>
+            <value>
+                <fullName>514 - David Turnbow (Flownet)</fullName>
+                <default>false</default>
+                <label>514 - David Turnbow (Flownet)</label>
+            </value>
+            <value>
+                <fullName>516 - Steve Wimmer (Flownet)</fullName>
+                <default>false</default>
+                <label>516 - Steve Wimmer (Flownet)</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

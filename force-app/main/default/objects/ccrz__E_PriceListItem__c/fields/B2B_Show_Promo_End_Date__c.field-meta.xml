@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>B2B_Show_Promo_End_Date__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Flag for CC pages to show Promo end date if the item is flagged as a Promotion.  For longer promotions, only show towards the end of the promotion.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Flag for CC pages to show Promo end date if the item is flagged as a Promotion.  For longer promotions, only show towards the end of the promotion.</inlineHelpText>
+    <label>Show Promo End Date</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

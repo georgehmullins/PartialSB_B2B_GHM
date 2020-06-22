@@ -1,0 +1,13 @@
+<apex:page >
+    <script>
+    r(['ccrz', 'productListPageView'], function(CCRZ, productListPageView){
+        productListPageView.extendproductListPageView();
+    });
+    var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+    CCRZ.pubSub.on('view:productListFilterView:refresh', function(myorders){
+        if(isMobile){
+            $('.cc_filter_icon').click();
+        }
+    });
+    </script>
+</apex:page>

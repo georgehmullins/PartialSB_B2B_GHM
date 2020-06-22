@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <accessMappings>
+        <accessLevel>Read</accessLevel>
+        <object>Account</object>
+        <objectField>Parent</objectField>
+        <userField>Account</userField>
+    </accessMappings>
+    <accessMappings>
+        <accessLevel>Read</accessLevel>
+        <object>ccrz__E_Invoice__c</object>
+        <objectField>ccrz__SoldTo__c.Parent</objectField>
+        <userField>Account</userField>
+    </accessMappings>
+    <accessMappings>
+        <accessLevel>Read</accessLevel>
+        <object>ccrz__E_Order__c</object>
+        <objectField>ccrz__Account__c.Parent</objectField>
+        <userField>Account</userField>
+    </accessMappings>
+    <description>Allow Parent Account B2B user access to Child Accounts</description>
+    <name>B2B Parent Account Share</name>
+    <profiles>b2b commerce community parent account user - wesco</profiles>
+    <profiles>b2b parent comm plus user - wesco</profiles>
+</SharingSet>

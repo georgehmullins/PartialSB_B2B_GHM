@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Commercial_Account__c</fullName>
+    <externalId>false</externalId>
+    <formula>CASE(  text(Account.Industry),  
+&quot;Cemetary&quot;, &quot;Commercial Account&quot;,
+&quot;College&quot;, &quot;Commercial Account&quot;,
+&quot;Community Development&quot;, &quot;Commercial Account&quot;, 
+&quot;Hospitality&quot;, &quot;Commercial Account&quot;,
+ &quot;Golf Course&quot; , &quot;Commercial Account&quot;,
+&quot;Institutional&quot;, &quot;Commercial Account&quot;,
+&quot;Management Company&quot;, &quot;Commercial Account&quot;,
+&quot;Municipality&quot;, &quot;Commercial Account&quot;,
+ &quot;Resort&quot;, &quot;Commercial Account&quot;,
+&quot;Sports Facility&quot; , &quot;Commercial Account&quot;,
+&quot;State Park&quot; , &quot;Commercial Account&quot;,
+&quot;Theme Park&quot;, &quot;Commercial Account&quot;,
+&quot;Homeowners Association&quot;, &quot;Commercial Account&quot;,
+&quot;School&quot;, &quot;Commercial Account&quot;,
+&quot;Landscape Contractor&quot; , &quot;Commercial Account&quot;,
+&quot;Property Management&quot; , &quot;Commercial Account&quot;,
+&quot;Irrigation Contractor&quot;, &quot;Commercial Account&quot;,
+&quot;Pre-Owned Retail&quot;, &quot;Commercial Account&quot;,
+&quot;Pre-Owned Wholesale&quot;, &quot;Commercial Account&quot;,
+&quot;Government&quot;, &quot;Commercial Account&quot;,
+null)</formula>
+    <inlineHelpText>This field is used for Robyn mailchimp filter</inlineHelpText>
+    <label>Commercial Account</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

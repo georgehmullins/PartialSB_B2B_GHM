@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ccrz__StoreID__c</fullName>
+    <defaultValue>&quot;DefaultStore&quot;</defaultValue>
+    <deprecated>false</deprecated>
+    <description>Storefront Name, for eg. DefaultStore. This field holds ONLY one Storefront Name.</description>
+    <externalId>false</externalId>
+    <label>Store ID</label>
+    <length>128</length>
+    <required>true</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

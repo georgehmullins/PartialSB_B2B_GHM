@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Internal_Only__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Internal contact only.  Do not display on community lists.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Check this box for any contact that should not be displayed on a customer community contact list.</inlineHelpText>
+    <label>Internal Only</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

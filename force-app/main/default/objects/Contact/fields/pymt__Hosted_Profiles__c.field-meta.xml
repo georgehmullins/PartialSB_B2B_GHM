@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pymt__Hosted_Profiles__c</fullName>
+    <deprecated>false</deprecated>
+    <description>JSON string containing IDs for all remotely hosted customer profiles linked to this contact (includes profiles stored at multiple payment processors)</description>
+    <externalId>false</externalId>
+    <inlineHelpText>JSON string containing IDs for all remotely hosted customer profiles linked to this contact (includes profiles stored at multiple payment processors)</inlineHelpText>
+    <label>Hosted Profiles</label>
+    <length>32768</length>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

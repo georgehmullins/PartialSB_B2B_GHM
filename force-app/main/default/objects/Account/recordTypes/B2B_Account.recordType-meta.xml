@@ -1,0 +1,1043 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>B2B_Account</fullName>
+    <active>true</active>
+    <description>Accounts setup just for B2B Ecommerce entitlements</description>
+    <label>B2B Account</label>
+    <picklistValues>
+        <picklist>AccountSource</picklist>
+        <values>
+            <fullName>Automatic</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Classified Ad</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Existing Customer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Management Company Change</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NeedTurfEquipment%2Ecom</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Print-Trade</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Public Web Form</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Referral</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Registered by Others</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Toro</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Toro Eloqua Engagement</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Toro Eloqua Raw Database</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Trade Show</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Turf%2Enet</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Use Account Source</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Web</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Apttus_Config2__BillingContactFormat__c</picklist>
+        <values>
+            <fullName>Comma Separated Values</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Filter Criteria</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Apttus_Config2__BillingDayOfMonth__c</picklist>
+        <values>
+            <fullName>10th of the Month</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>11th of the Month</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>12th of the Month</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>13th of the Month</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>14th of the Month</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>15th of the Month</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>16th of the Month</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>17th of the Month</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>18th of the Month</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>19th of the Month</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1st of the Month</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>20th of the Month</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>21st of the Month</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>22nd of the Month</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>23rd of the Month</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>24th of the Month</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>25th of the Month</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>26th of the Month</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>27th of the Month</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>28th of the Month</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>29th of the Month</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2nd of the Month</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>30th of the Month</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>31st of the Month</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3rd of the Month</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4th of the Month</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>5th of the Month</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>6th of the Month</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>7th of the Month</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>8th of the Month</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>9th of the Month</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>End of Month</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Apttus_Config2__CalendarCycleStart__c</picklist>
+        <values>
+            <fullName>April</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>August</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>December</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>February</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>January</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>July</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>June</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>March</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>May</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>November</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>October</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>September</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Apttus_Config2__TaxExemptStatus__c</picklist>
+        <values>
+            <fullName>Approved</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Processing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rejected</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Apttus_Config2__TaxExempt__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>B2B_Account_Menu_Control__c</picklist>
+        <values>
+            <fullName>ANONYMOUS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DEALER</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GOLF</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IRRIGATION</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PREOWNED</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SFG</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>County__c</picklist>
+        <values>
+            <fullName>Alachua</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Baker</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bradford</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Brantley</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Brevard</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Brooks</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Camden</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Charlotte</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Charlton</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Citrus</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Clay</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Clinch</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Collier</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Columbia</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>De Soto</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Decatur</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dixie</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Duval</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Echols</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Flagler</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Franklin</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Gadsden</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Gilchrist</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Glades</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Glynn</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Grady</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hamilton</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hardee</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hendry</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hernando</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Highlands</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hillsborough</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Jefferson</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lafayette</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lake</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lanier</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lee</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Leon</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Levy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Liberty</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lowndes</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Madison</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Manatee</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Marion</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Nassau</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Orange</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Osceola</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pasco</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pierce</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pinellas</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Polk</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Putnam</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Saint Johns</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sarasota</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Seminole-FL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Seminole-GA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sumter</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Suwannee</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Taylor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Thomas</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Union</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Volusia</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wakulla</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ware</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>FSA_Flownet__c</picklist>
+        <values>
+            <fullName>513 - Ralph Silletti</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>514 - David Turnbow</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>516 - Steve Wimmer</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>FSA_Irrigation__c</picklist>
+        <values>
+            <fullName>511 - Ralph Silletti</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>515 - Kevin Powers</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>517 - Amy Burgert</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>FSA_Turf__c</picklist>
+        <values>
+            <fullName>88A - Bill Berdnik</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>88B - K%2EJ%2E Skel</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>88C - Darrin Ellis</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>88D - Bryan Greenhill</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>88E - Joe Bishop</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Industry</picklist>
+        <values>
+            <fullName>Cemetary</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>College</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Community Development</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dealer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Demo Account</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Distributor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Employee</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Golf Course</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Government</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Homeowners Association</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hospitality</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Institutional</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Irrigation Contractor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Landscape Contractor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lease Company</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Management Company</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Municipality</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pre-Owned Retail</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pre-Owned Retail OOT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pre-Owned Wholesale</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pre-Owned Wholesale OOT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Property Management</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Res%2FCom Customer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Resort</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sports Facility</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>State Park</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Theme Park</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vendor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wesco Internal</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Irrigation_Salesperson__c</picklist>
+        <values>
+            <fullName>501 - Bo Irby</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>502 - Andrew Johnston</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>504 - Tina Neuzil</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>505 - Tim Denton</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>513 - Ralph Silletti %28Flownet%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>514 - David Turnbow %28Flownet%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>516 - Steve Wimmer %28Flownet%29</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Ownership</picklist>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Private</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Public</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Subsidiary</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Primary_Salesperson__c</picklist>
+        <values>
+            <fullName>201 - Rick Gooding</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>202 - Frank Pitman</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>203 - Jamie Short</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>204 - Bill Johnson</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>221 - Rick Gooding - Municipality</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>222 - Frank Pitman - Municipality</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>223 - Jamie Short - Municipality</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>249 - Consumer House</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>303 - Pete Clover</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>304 - Ken Arsenault %28Golf%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>305 - Bill Wallace %28Golf%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>306 - Scott LoVecchio</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>307 - Taylor Eli</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>308 - Ron Bear</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>309 - Jim Spano</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>310 - Scott Ford</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>321 - PreOwned Sales Team</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>349 - Golf House Account</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>401 - Jerry Adams</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>402 - Rick Gooding %28SFG%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>403 - Bill Wallace %28SFG%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>404 - Chris Fordney</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>405 - Bill Johnson</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>406 - Ken Arsenault %28SFG%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>449 - SFG House Account</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>501 - Paul Hoffman</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>502 - Andrew Johnston</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>504 - Tina Neuzil</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>505 - Tim Denton</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>513 - Ralph Silletti %28Flownet%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>514 - Mike Simpson %28Flownet%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>516 - Wesley Maxwell %28Flownet%29</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Rating</picklist>
+        <values>
+            <fullName>Cold</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hot</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Warm</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>SFG_Account_Rating__c</picklist>
+        <values>
+            <fullName>Cold</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hot</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Warm</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>SLA__c</picklist>
+        <values>
+            <fullName>Bronze</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Gold</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Platinum</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Silver</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Type</picklist>
+        <values>
+            <fullName>Competitor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Contractor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Customer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>National</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prospect</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reseller</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vendor</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>UpsellOpportunity__c</picklist>
+        <values>
+            <fullName>Maybe</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

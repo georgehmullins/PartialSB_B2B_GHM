@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Lease_Expiration_Report__c</fullName>
+    <externalId>false</externalId>
+    <formula>HYPERLINK(
+
+/* If they&apos;re in Lightning */
+IF($User.UIThemeDisplayed=&quot;Theme4d&quot;,
+
+/* Use Lightning syntax, optimized to avoid full page reload */
+&quot;#/sObject/00O0W000005jF4i/view?fv0=&quot;,
+
+/* Otherwise use Classic syntax */
+&quot;/00O0W000005jF4i?pv0=&quot;)
+
+/* Append the Account ID */
+&amp;Id,
+
+/* Specify the link text */
+&quot;Report URL&quot;,
+
+/* Open in new window */
+&quot;_blank&quot;
+)</formula>
+    <inlineHelpText>Click on this link to view the list of upcoming off-lease for this account</inlineHelpText>
+    <label>Lease Expiration Report</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>B2B_Promo_Basis_Price__c</fullName>
+    <description>For Promotional priced items only to store the &quot;before&quot; price for the Promotion.  This will be used for comparing to the Promo Price for Savings to customer.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>For Promotional priced items only to store the &quot;before&quot; price for the Promotion.  This will be used for comparing to the Promo Price for Savings to customer.</inlineHelpText>
+    <label>Promo Basis Price</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

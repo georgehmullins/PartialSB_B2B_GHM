@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>B2B_Contact_Validation_before_ERP_Push</fullName>
+    <active>true</active>
+    <description>Validate required fields before allowing to save record to send B2B Contact to ERP.</description>
+    <errorConditionFormula>AND(B2B_Customer__c  = true , OR( ISNULL(Email),  ISNULL(Account.AccountNumber), ISNULL(  TEXT(Account.B2B_Account_Menu_Control__c) ), ISBLANK(  B2B_Community_User__c ),  ISNULL(Account.ccrz__E_AccountGroup__c)    ))</errorConditionFormula>
+    <errorMessage>One or more required fields not populated for B2B Contact to be transmitted to ERP.  Please correct missing information and try again.  Must have Email address and Community user setup as well as the related Account must have Account information correct.</errorMessage>
+</ValidationRule>

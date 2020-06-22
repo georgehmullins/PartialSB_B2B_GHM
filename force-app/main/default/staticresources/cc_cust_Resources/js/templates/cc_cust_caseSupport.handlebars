@@ -1,0 +1,137 @@
+<!--  ----------------------------------------------------------------------  -->
+<!--  NOTE: Please add the following <META> element to your page <HEAD>.      -->
+<!--  If necessary, please modify the charset parameter to specify the        -->
+<!--  character set of your HTML page.                                        -->
+<!--  ----------------------------------------------------------------------  -->
+
+<META HTTP-EQUIV="Content-type" CONTENT="text/html; charset=UTF-8">
+
+<!--  ----------------------------------------------------------------------  -->
+<!--  NOTE: Please add the following <FORM> element to your page.             -->
+<!--  ----------------------------------------------------------------------  -->
+<div id="supportCase">
+    <!--  ----------------------------------------------------------------------  -->
+<!--  NOTE: Please add the following <META> element to your page <HEAD>.      -->
+<!--  If necessary, please modify the charset parameter to specify the        -->
+<!--  character set of your HTML page.                                        -->
+<!--  ----------------------------------------------------------------------  -->
+
+<meta http-equiv="Content-type" content="text/html; charset=UTF-8">
+
+<!--  ----------------------------------------------------------------------  -->
+<!--  NOTE: Please add the following <FORM> element to your page.             -->
+<!--  ----------------------------------------------------------------------  -->
+
+<h1 style="text-align: center;">WESCO TURF CASE SUBMISSION FOR SERVICE REQUEST<br><br>
+</h1>
+<form action="{{pageLabelMap 'B2B_Web_case_Form_Action'}}" method="POST" class="form-horizontal">
+        <div class="panel-body cc_body">
+            <input type="hidden" name="orgid" value="00D2g0000000iiA">
+            <input type="hidden" name="retURL" value="{{pageLabelMap 'B2B_Web_lead_Return_Url'}}">
+
+            <!--  ----------------------------------------------------------------------  -->
+            <!--  NOTE: These fields are optional debugging elements. Please uncomment    -->
+            <!--  these lines if you wish to test in debug mode.                          -->
+            <!--  <input type="hidden" name="debug" value=1>                              -->
+            <!--  <input type="hidden" name="debugEmail" value="mkumar@docmation.com">    -->
+            <!--  ----------------------------------------------------------------------  -->
+    <div class="row">
+    <div class="col-md-3"></div>
+     <div class="col-md-6">
+            <div class="form-group">
+                <label for="name" class="col-sm-4 cc_salutation_label">Contact Name *</label>
+                <div class="col-sm-8">
+                    <input id="name" maxlength="80" name="name" size="20" placeholder="John Doe" type="text" class="form-control" required="">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="email" class="col-sm-4 cc_salutation_label">Email *</label>
+                <div class="col-sm-8">
+                    <input id="email" maxlength="80" name="email" size="20" type="text" placeholder="john.doe@mail.com" class="form-control" required="">
+                </div>
+            </div>
+            
+            <div class="form-group">
+                            <label for="phone" class="col-sm-4 cc_salutation_label">Phone *</label>
+                <div class="col-sm-8">
+                    <input id="phone" maxlength="40" name="phone" size="20" type="text" class="form-control" required="">
+                </div>
+            </div><div class="form-group">
+                <label for="company" class="col-sm-4 cc_salutation_label">Company *</label>
+                <div class="col-sm-8">
+                    <input id="company" maxlength="80" name="company" size="50" type="text" class="form-control" required="">
+                </div>
+            </div>
+            <div class="form-group">  
+                <label for="address" class="col-sm-4 cc_salutation_label">Address *</label>
+                <div class="col-sm-8">
+                    <textarea name="00N0W000009OEBW" class="location-full-address form-control" id="00N0W000009OEBW" required=""></textarea>
+                </div>
+            </div>
+            <div class="form-group"> 
+                <strong>SERVICE REQUEST INFORMATION</strong>
+            </div>
+            <div class="form-group">
+                <label for="reason" class="col-sm-4 cc_salutation_label">Case Reason</label>
+                <div class="col-sm-8">
+                    <select id="reason" name="reason" class="form-control">
+                    <option value="">--None--</option>
+                    <option value="New problem">New problem</option>
+                    <option value="Existing problem">Existing problem</option>
+                    <option value="Maintenance">Maintenance</option>
+                    <option value="Parts Warranty">Parts Warranty</option>
+                    <option value="Warranty Request">Warranty Request</option>
+                    <option value="Parts Visit Request">Parts Visit Request</option>
+                    <option value="Service Visit Request">Service Visit Request</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-4 cc_salutation_label" style="color: #d0121a !important;">Check if Unit Down - Urgent Request:</label>
+                <div class="col-sm-8">
+                    <input id="00N0W000009OECt" name="00N0W000009OECt" type="checkbox" value="1">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-4 cc_salutation_label">Model Number:</label>
+                <div class="col-sm-8">
+                    <input id="00N0W000009OEBb" maxlength="40" name="00N0W000009OEBb" size="20" type="text" class="form-control">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-4 cc_salutation_label">Serial Number:</label>
+                <div class="col-sm-8">
+                    <input id="00N0W000009OEBg" maxlength="40" name="00N0W000009OEBg" class="form-control" size="20" type="text">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-4 cc_salutation_label">Hour Meter:  </label>
+                <div class="col-sm-8">
+                    <input id="00Nd0000006dUFk" maxlength="10" name="00Nd0000006dUFk" size="10" type="text" class="form-control">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="subject" class="col-sm-4 cc_salutation_label">Subject *</label>
+                <div class="col-sm-8">
+                    <input id="subject" maxlength="80" name="subject" size="20" type="text" class="form-control" required="">
+                </div>
+            </div>
+            <div class="form-group">
+                
+                <label for="description" class="col-sm-4 cc_salutation_label">Description *</label>
+                <div class="col-sm-8">
+                    <textarea name="description" class="form-control" required=""></textarea>
+                </div>
+            </div>
+            <input type="hidden" id="external" name="external" value="1" required="">
+            <div class="form-group">
+                <div class="col-sm-offset-4 col-sm-8" style="margin-top: 20px;">
+                    <input type="submit" name="submit" class="btn btn-default btn-sm submit cc_submit">
+                </div>
+            </div>
+        </div>
+    <div class="col-md-3"></div></div>
+     
+</div>
+    </form>
+</div>

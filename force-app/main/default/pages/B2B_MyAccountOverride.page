@@ -1,0 +1,101 @@
+<!--
+  @File Name          : B2B_MyAccountOverride.page
+  @Description        : 
+  @Author             : Rajesh Kumar
+  @Group              : 
+  @Last Modified By   : Rajesh Kumar
+  @Last Modified On   : 6/2/2020, 10:56:42 PM
+  @Modification Log   : 
+  Ver       Date            Author      		    Modification
+  1.0    6/2/2020   Rajesh Kumar     Initial Version
+-->
+<apex:page applyHtmlTag="false" sidebar="false" controller="B2B_MyAccountController" showHeader="false" standardStylesheets="false">
+    <div id="overlay-myQuotes" class="modal-backdrop fade in hide-div"></div>
+    <c:B2B_MyQuotes />
+    
+    <script type="text/javascript">
+    let orders=[];
+    let isorderAjaxFired = false;
+    jQuery(function($){
+        r(['ccrz', 'MyOpenOrderView'], function(CCRZ, MyOpenOrderView){
+            MyOpenOrderView.extendMyOpenOrderView();
+        });
+        CCRZ.pubSub.on('view:myOrdersView:refresh', function(myorders){
+            $(".requestedDate").datepicker('destroy');
+            $(".requestedDate").datepicker({
+                language: CCRZ.pagevars.userLocale,autoclose:true
+            });
+        });
+        //pubSub listener, called when the My Account view needs to initialize the side menu
+        CCRZ.pubSub.on('view:myaccountView:awaitingSubViewInit', function(viewRef) {
+            
+            //pubSub listener function, viewRef is the Backbone view for My Account
+            if(CCRZ.MyAccount.contactInfo){
+                CCRZ.MyAccount.contactInfo.register(viewRef);
+            }
+            if(CCRZ.MyAccount.changePassword){
+                CCRZ.MyAccount.changePassword.register(viewRef);
+            }
+            if(CCRZ.MyAccount.addressBooks){
+                CCRZ.MyAccount.addressBooks.register(viewRef);
+            }
+            if(CCRZ.MyAccount.myCarts){
+                CCRZ.MyAccount.myCarts.register(viewRef);
+            }
+            if(CCRZ.MyAccount.myOrders){
+                CCRZ.MyAccount.myOrders.register(viewRef);
+            }
+            if(CCRZ.MyAccount.myWishlists){
+                CCRZ.MyAccount.myWishlists.register(viewRef);
+            }
+            if(CCRZ.MyAccount.mySubscriptions){
+                CCRZ.MyAccount.mySubscriptions.register(viewRef);
+            }
+            if(CCRZ.MyAccount.myWallet){
+                CCRZ.MyAccount.myWallet.register(viewRef);
+            }
+            if(CCRZ.MyAccount.myInvoices){
+                CCRZ.MyAccount.myInvoices.register(viewRef);
+            }
+            //New section
+            if(CCRZ.MyAccount.MyQuotes){
+                CCRZ.MyAccount.MyQuotes.register(viewRef);
+            }
+            if(CCRZ.MyAccount.MyOpenOrder){
+                CCRZ.MyAccount.MyOpenOrder.register(viewRef);
+            }
+            
+            //Tell the My Account view that it should proceed with rendering the view
+            CCRZ.pubSub.trigger("view:myaccountView:subViewInit", true);
+        });
+        CCRZ.subsc = _.extend(CCRZ.subsc||{});
+            CCRZ.subsc.Myaccount =  _.extend(CCRZ.RemoteInvocation,{ 
+                className : 'B2B_MyAccountController', 
+                getOpenOrder : function( reqData,callback){ 
+                    this.invokeCtx('getMyOpenOrders', 
+                            reqData, callback, 
+                                { 
+                                    buffer:false, //this call will be executed by itself 
+                                    nmsp : false //defines that this is a call to a subscriber class 
+                                } 
+                            );//end invokeCtx call 
+                }
+            });
+    });
+    jQuery(function($){ 
+        var isFirstTime = true;    
+        CCRZ.pubSub.on('view:myInvoicesView:refresh', function (view){
+            if(isFirstTime && $('.searchInvoiceStatus').length > 0){
+                isFirstTime = false;
+                $('.searchInvoiceStatus').val('Open');
+                $('.searchInvoice').click();
+            }
+            
+            $(".requestedDate").datepicker('destroy');
+            $(".requestedDate").datepicker({
+                language: CCRZ.pagevars.userLocale,autoclose:true
+            });
+        }); 
+    });
+    </script>
+</apex:page>

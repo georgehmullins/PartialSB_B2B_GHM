@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pymt__Manage_CIM_Profiles</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <linkType>page</linkType>
+    <masterLabel>Manage CIM Profiles</masterLabel>
+    <openType>replace</openType>
+    <page>pymt__ManageCIMProfile</page>
+    <protected>false</protected>
+</WebLink>

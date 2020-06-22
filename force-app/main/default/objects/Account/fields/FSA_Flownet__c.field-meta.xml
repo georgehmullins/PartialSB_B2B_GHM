@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FSA_Flownet__c</fullName>
+    <description>Primary Flownet Service Advisor for the customer</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Primary Flownet Service Advisor for the customer</inlineHelpText>
+    <label>Flownet FSA</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>513 - Ralph Silletti</fullName>
+                <default>false</default>
+                <label>513 - Ralph Silletti</label>
+            </value>
+            <value>
+                <fullName>514 - David Turnbow</fullName>
+                <default>false</default>
+                <label>514 - David Turnbow</label>
+            </value>
+            <value>
+                <fullName>516 - Steve Wimmer</fullName>
+                <default>false</default>
+                <label>516 - Steve Wimmer</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

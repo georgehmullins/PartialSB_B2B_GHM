@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Previous_FY_Sales_Link__c</fullName>
+    <externalId>false</externalId>
+    <formula>HYPERLINK(
+
+/* If they&apos;re in Lightning */
+IF($User.UIThemeDisplayed=&quot;Theme4d&quot;,
+
+/* Use Lightning syntax, optimized to avoid full page reload */
+&quot;#/sObject/00O0W000005iw5mUAA/view?fv0=&quot;,
+
+/* Otherwise use Classic syntax */
+&quot;/00O0W000005iw5mUAA?pv0=&quot;)
+
+/* Append the Account ID */
+&amp;Id,
+
+/* Specify the link text */
+&quot;Report URL&quot;,
+
+/* Open in new window */
+&quot;_blank&quot;
+)</formula>
+    <inlineHelpText>Click here to view sales history for previous FY</inlineHelpText>
+    <label>Previous FY Sales Report</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

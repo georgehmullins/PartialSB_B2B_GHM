@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ccrz__SubProdTerm__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <description>The subscription term this price is associated with.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Enter the subscription term this price is associated with.</inlineHelpText>
+    <label>SubProdTerm</label>
+    <referenceTo>ccrz__E_SubProdTerm__c</referenceTo>
+    <relationshipLabel>CC Price List Items</relationshipLabel>
+    <relationshipName>E_PriceListItems</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

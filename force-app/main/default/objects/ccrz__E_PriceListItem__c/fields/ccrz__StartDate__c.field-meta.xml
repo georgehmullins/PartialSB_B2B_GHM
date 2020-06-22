@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ccrz__StartDate__c</fullName>
+    <defaultValue>Today()</defaultValue>
+    <deprecated>false</deprecated>
+    <description>The start date for which this item record is active. This is the first date the item will be active</description>
+    <externalId>false</externalId>
+    <label>Start Date</label>
+    <required>true</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>

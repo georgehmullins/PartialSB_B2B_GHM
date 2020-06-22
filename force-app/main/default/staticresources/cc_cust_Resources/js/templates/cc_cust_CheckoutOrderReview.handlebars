@@ -1,0 +1,295 @@
+   <div class="panel panel-default cc_panel cc_checkout_review">
+    <div class="panel-heading cc_heading">
+     <h3 class="panel-title cc_title">{{pageLabelMap 'CheckOut_GeneralInformation'}}</h3>
+    </div>
+    <div class="panel-body cc_body">
+     <form enctype="multipart/form-data" class="margin_form cc_OrderReview_new">
+      <div class="messagingSection-Error" style="display: none"></div>
+      <div class="messagingSection-Info" style="display: none"></div>
+      <div class="messagingSection-Warning" style="display: none"></div>
+      <div class="well cc_well cc_order_review">
+       <div class="row">
+        <div class="col-xs-12 col-md-4">
+         <h5 class="cc_buyer_information hi">{{pageLabelMap 'CheckOut_BuyerInformation'}}</h5>
+         <p class="cc_buyer">
+          <a id="edit_UserInfo" href="#edit_UserInfo" class="editAddressInfo cc_edit_address_info" data-toggle="modal" data-target="#buyerInfoModal">{{pageLabelMap 'CheckOut_edit'}}</a><br>
+          <span class="cc_buyer_firstname" id="bFname">{{this.buyerFirstName}} {{this.buyerLastName}}</span><br/>
+          {{#if this.buyerPhone}}
+          <span class="cc_buyer_phone" id="bPhone">{{phoneFormat this.buyerPhone}}</span><br/>
+          {{/if}}
+          <span class="cc_buyer_email" id="bEmail">{{this.buyerEmail}}</span>
+         </p>
+         <!--<h5 class="cc_shipping_information">{{pageLabelMap 'CheckOut_ShipmentInformation'}}</h5>-->
+         <p class="cc_shipping">
+           <p class="cc_shipping_method_section">
+            <span class="cc_shipping_method_label">{{pageLabelMap 'CheckOut_ShippingMethod'}}&#58;&#160;</span>
+            <select id="shippingMethod" class="form-control shippingOptions cc_shipping_method" name="shippingMethod">
+            {{#each this.shippingMethods}}
+             <option value="{{this.serviceName}}" {{#ifEquals ../shippingMethod this.serviceName}} selected {{/ifEquals}}>
+              {{this.serviceName}}
+             </option>
+            {{/each}}
+           </select>
+           </p>
+          {{#ifDisplay 'SO.DsplShipComplete'}}
+            <div class="coso_ship_complete cc_coso_ship_complete form-group">
+               <div class="checkbox">
+               <label for="estShipping" class="cc_est_shipping_label">
+               <input id="estShipping" type="checkbox" name="shipComplete" class="boxes cc_ship_complete" value="true" {{#if this.shipComplete}} checked {{/if}} />
+               {{pageLabelMap 'CheckOut_ShipComplete'}}
+               </label>
+               </div>
+            </div>
+         {{/ifDisplay}}
+          {{#if this.shippingInst}}
+           <p class="cc_shipping_notes_section">
+            <span class="cc_shipping_notes_label">{{pageLabelMap 'CheckOut_ShippingNotes'}}&#58;&#160;</span>
+            <span class="cc_shipping_notes">{{this.shippingInst}}</span>
+           </p>
+          {{/if}}
+          {{#if this.requestedDateStr}}
+           <p class="cc_shipping_delivery_section">
+            <span class="cc_shipping_delivery_date_label">{{pageLabelMap 'Checkout_RequestedDeliveryDt'}}&#58;&#160;</span>
+            <span class="cc_shipping_delivery_date">{{this.requestedDateStr}}</span>
+           </p>
+          {{/if}}
+         </p>
+        </div>
+        <div class="col-xs-12 col-md-4">
+         <h5 class="cc_billing_address_label">{{pageLabelMap 'CheckOut_BillingAddress'}}</h5>
+        <!-- <a id="edit_UserInfo" href="#edit_UserInfo" class="editAddressInfo cc_edit_address_info">{{pageLabelMap 'CheckOut_edit'}}</a>--><br>
+         <span class="cc_billing_address">{{> addressDisplay this.billingAddress}}</span>
+        </div>
+        <div class="col-xs-12 col-md-4">
+         {{#if this.hasCoupon}}
+         <h5 class="cc_coupon_label">{{pageLabelMap 'CartInc_AppliedCoupon'}}</h5>
+         <p class="cc_coupon_section">
+          <span class="cc_coupon">{{this.couponName}}</span>
+         </p>
+         {{/if}}
+        </div>
+        <div class="col-xs-12 col-md-4">
+         <h5 class="cc_shipping_address_label">{{pageLabelMap 'CheckOut_OrderReviewShippingAddress'}}</h5>
+         <a id="edit_shipInfo" href="#" class="editAddressInfo cc_edit_address_info textRed" data-toggle="modal" data-target="#shippingAddressModal">Choose Shipping Address</a><br>
+         <p class="cc_shipping">
+          {{!-- <span class="cc_shipping_address">{{> addressDisplay this.shippingAddress}}</span> --}}
+          <span class="cc_shipping_address">
+            <div class="address_selection_display">
+            <p class="cc_addr_company" id="addrComp">{{this.shippingAddress.companyName}}</p>
+            <span class="addr_line1 cc_addr_line" id="addrFline">{{this.shippingAddress.address1}}</span><br>
+            <span class="addr_line2 cc_addr_line" id="addrLline">{{this.shippingAddress.address2}}</span><br>
+            <span class="cc_addr_city" id="addrCity">{{this.shippingAddress.city}}</span>
+            <span class="cc_addr_state" id="addrState">,&nbsp;{{this.shippingAddress.stateCode}}</span>
+            <span class="cc_addr_postal" id="addrPostal">&nbsp;{{this.shippingAddress.postalCode}}</span><br>
+            <span class="cc_addr_country"></span><br> 
+            <span class="cc_addr_extId" id="addrPartner">{{this.shippingAddress.partnerId}}</span>
+          </div>
+          </span>
+         </p>
+        </div>
+       </div>
+      </div>
+      <div class="reviewCartSection"></div>
+      <div class="reviewPaymentSection"></div>
+      <div class="total cc_total row">
+         <div class="col-md-4"><br/>
+         {{#ifDisplay 'SO.DsplShipNotes'}}
+         <div class="coso_ship_notes form-group cc_coso_ship_notes">
+            <label for="shippingNotes" class="cc_shipnotes_label">{{pageLabelMap 'CheckOut_ShippingNotes'}}</label>
+            <hr><hr><hr>
+            <textarea id="shippingNotes" name="shippingInst" rows="3" maxlength="1000" class="shipnotes form-control cc_shipnotes">{{this.note}}</textarea>
+         </div>
+         {{/ifDisplay}}
+         </div>
+         <div class="col-md-4"></div>
+            <div class="col-md-4">
+               <h4>
+                  <p class="cc_grand_total floatRighttClass">
+                     <span class="cc_total_label">{{pageLabelMap 'CartInc_Total'}}&#58;&#160;</span>
+                     <span class="cc_total_amount">{{price this.totalAmount this.currencyISOCode}}</span>
+                  </p>
+               </h4>
+               <br/>
+               <span class="cc_tax_msg floatRighttClass">* Tax and shipping will be shown on invoice</span>
+               <br/><br/>
+               <span class="floatRighttClass"><input id="termsChk" type="checkbox" name="terms" class="boxes cc_ship_complete" value="true">
+                  I agree to the <a href="#" data-toggle="modal" data-target="#termsAndCond">Terms and Conditions</a>
+                </span><br/>
+               <p class="link_button cc_link_button floatRighttClass">
+                  <!--<input class="btn btn-default btn-sm processBack cc_process_back" type="button" value="{{pageLabelMap 'Back'}}" alt="{{pageLabelMap 'Back'}}" />-->
+                  <input class="btn btn-default btn-sm saveQuote cc_save_quote" type="button" value="{{pageLabelMap 'Checkout_SaveCartAsQuote'}}" alt="{{pageLabelMap 'Checkout_SaveCartAsQuote'}}" {{#if this.termsChk}} {{else}} disabled {{/if}}/>
+                  <input class="btn btn-default btn-sm processReviewCustom proceed cc_process_review" type="button" value="{{pageLabelMap 'CheckOut_MobileGotoPayment'}}" alt="{{pageLabelMap 'CheckOut_AcceptAndProceed'}}" {{#if this.termsChk}} {{else}} disabled {{/if}} />
+               </p>
+            </div>
+         </div>
+      
+     </form>
+    </div>
+   </div>
+  <!-- Modal -->
+<div class="modal fade" id="shippingAddressModal" tabindex="-1" role="dialog" aria-labelledby="shippingAddressModalModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <!--<h5 class="modal-title" id="shippingAddressModalModalLabel">Modal title</h5>-->
+        <button type="button" class="close" id="shippingAddressModalClose" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title cc_title"> Address Book</h4>
+      </div>
+      {{#each this.shipAddressList}}
+      <div class="col-md-12">
+      <div class="col-xs-12 col-md-6">         
+        <br>
+        <div class="address_selection_display">
+            <p class="cc_addr_company">{{this.companyName}}</p>
+            <span class="addr_line1 cc_addr_line">{{this.adrsFirstLine}}</span><br>
+            <span class="addr_line2 cc_addr_line">{{this.adrsSecondLine}}</span><br>
+            <span class="cc_addr_city">{{this.city}}</span>
+            <span class="cc_addr_state">,&nbsp;{{this.stateIsoCode}}</span>
+            <span class="cc_addr_postal">&nbsp;{{this.postalCode}}</span><br>
+            <span class="cc_addr_country"></span><br> 
+            <span class="cc_addr_extId">{{this.partnerId}}</span>
+          </div>
+ 
+         <p></p>
+        </div>
+        <div class="col-xs-12 col-md-6">
+          <br/><br/><br/>
+          <button type="button" id="{{this.sfID}}" data-Id="{{this.sfID}}" class="btn btn-default btn-sm  selectShip">Select</button>
+
+        </div>
+      </div>
+      {{/each}}
+      <div class="modal-footer">
+      <!--  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+       <button type="button" class="btn btn-primary">Save changes</button>-->
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Buyer Information -->
+<div class="modal fade" id="buyerInfoModal" tabindex="-1" role="dialog" aria-labelledby="buyerInfoModalModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <!--<h5 class="modal-title" id="buyerInfoModalModalLabel">Modal title</h5>-->
+        <button type="button" class="close" id="buyerInfoModalClose" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title cc_title"> Buyer Info</h4>
+      </div>
+        <div class="col-md-12" style="padding: 5px;">
+          <div class="col-md-3">
+            <span>FirstName:</span>
+          </div>
+          <div class="col-md-9">
+            <input type="text" id="fname" maxlength="40" class="col-md-12" value="{{this.buyerFirstName}}">
+          </div>
+        </div>
+        <div class="col-md-12" style="padding: 5px;">
+          <div class="col-md-3">
+            <span>LastName:</span>
+          </div>
+          <div class="col-md-9">
+            <input type="text" id="lname" maxlength="80" class="col-md-12" value="{{this.buyerLastName}}">
+          </div>
+        </div>
+        <div class="col-md-12" style="padding: 5px;">
+          <div class="col-md-3">
+            <span>Phone:</span>
+          </div>
+          <div class="col-md-9">
+            <input type="phone" id="phn" class="col-md-12" maxlength="18" value="{{this.buyerPhone}}">
+          </div>
+        </div>
+        <div class="col-md-12" style="padding: 5px;">
+          <div class="col-md-3">
+            <span>Email:</span>
+          </div>
+          <div class="col-md-9">
+            <input type="email" id="emailAdrs" class="col-md-12" value="{{this.buyerEmail}}">
+          </div>
+        </div>
+        <div class="col-md-12" style="padding: 5px;">
+          <div class="col-md-3">
+            <span></span>
+          </div>
+          <div class="col-md-9">
+            <button type="button" id="{{this.sfid}}" class="btn btn-default btn-sm  updateBuyerInfo" style="float: right;">save</button></div>
+        </div>
+        <!--<table  class="table hi">
+            <thead class="grey lighten-2">
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Postal Code</th>
+                    <th scope="col">B2B Address Type</th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each this.shipAddressList}}
+                    <tr>
+                        <td>{{this.Name}}</td>
+                        <td>{{this.Id}}</td>
+                        <td>{{this.B2B_Address_Type__c}}</td>
+                        <td><button type="button" id="{{this.Id}}" data-Id="{{this.Id}}" class="btn btn-primary selectShip">Select</button></td>
+                    </tr>
+                {{/each}}
+            </tbody>
+        </table>
+      </div>-->
+      <div class="modal-footer">
+      <!--  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+       <button type="button" class="btn btn-primary">Save changes</button>-->
+      </div>
+    </div>
+  </div>
+</div>
+
+{{!-- Modal Quote Status --}}
+<div class="modal fade" id="saveAsQuoteStatus" tabindex="-1" role="dialog" aria-labelledby="saveAsQuoteStatusLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" id="saveAsQuoteStatusClose" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title cc_title"> Quote Status </h4>
+      </div>
+      <div class="col-md-12">
+        <br/><br/>
+        {{#if this.orderNumber}}
+            Quote saved Successfully. Your Order Number is : <a href="#" id="redirectToQuoteDetail">{{this.orderNumber}}</a>
+        {{/if}}
+        {{#if this.saveQuoteError}}
+            Something went wrong, Please try again Later.
+        {{/if}}
+        <br/><br/>
+      </div>
+      <div class="modal-footer">
+        {{#if this.orderNumber}}
+            <button type="button" class="btn btn-primary" data-dismiss="modal" id="redirectToHome">Ok</button>
+        {{/if}}
+        {{#if this.saveQuoteError}}
+            <button type="button" class="btn btn-primary" data-dismiss="modal">Ok</button>
+        {{/if}}
+      </div>
+    </div>
+  </div>
+</div>
+
+{{!-- Modal Terms and Conditions --}}
+<div class="modal fade" id="termsAndCond" tabindex="-1" role="dialog" aria-labelledby="termsAndCondLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content" style="height: 600px;overflow-y: scroll;">
+      <div class="modal-header">
+        <button type="button" class="close" id="termsAndCondClose" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      {{{this.terms.[0].description}}}
+    </div>
+  </div>
+</div>

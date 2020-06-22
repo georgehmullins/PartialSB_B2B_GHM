@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ccrz__LocationType__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Deprecated.</description>
+    <externalId>false</externalId>
+    <label>Location Type</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Header</fullName>
+                <default>false</default>
+                <label>Header</label>
+            </value>
+            <value>
+                <fullName>Footer</fullName>
+                <default>false</default>
+                <label>Footer</label>
+            </value>
+            <value>
+                <fullName>Left Nav</fullName>
+                <default>false</default>
+                <label>Left Nav</label>
+            </value>
+            <value>
+                <fullName>Right Nav</fullName>
+                <default>false</default>
+                <label>Right Nav</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

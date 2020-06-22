@@ -1,0 +1,21 @@
+   <div class="container">
+    <div class="row">
+     <div class="col-xs-12">
+      <ul class="nav nav-pills nav-justified thumbnail">
+      {{#each this.views}}
+      <li class="{{#ifEquals @index ../index}}active{{else}}disabled{{/ifEquals}} cc_checkoutStep{{@index}} cc_checkoutStep hi">
+       <a><h4 class="list-group-item-heading">{{{this.title}}}</h4></a>
+      </li>
+      {{/each}}
+      <li class="disabled cc_checkoutStepOrderConfirmation cc_checkoutStep">
+       <a><h4 class="list-group-item-heading">{{pageLabelMap 'CheckOut_OrderConfirmationStep'}}</h4></a>
+      </li>
+      </ul>
+     </div>
+    </div>
+   </div>
+  </script>
+		<script id="Checkout-ErrorView" type="text/template">
+   <div class="margin_form checkout_error cc_checkout_error">
+    <div class="messagingSection-Error" style="display: none"></div>
+   </div>

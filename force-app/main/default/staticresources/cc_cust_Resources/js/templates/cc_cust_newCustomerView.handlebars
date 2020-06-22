@@ -1,0 +1,159 @@
+<!--  ----------------------------------------------------------------------  -->
+<!--  NOTE: Please add the following <META> element to your page <HEAD>.      -->
+<!--  If necessary, please modify the charset parameter to specify the        -->
+<!--  character set of your HTML page.                                        -->
+<!--  ----------------------------------------------------------------------  -->
+
+<META HTTP-EQUIV="Content-type" CONTENT="text/html; charset=UTF-8">
+<div class="messaging_block" id="notification_msg_panel">
+</div>
+<div class="form-group">
+    <div class="c col-sm-12" style="margin-bottom: 40px;">
+        {{{pageLabelMap 'B2B_Register_Note'}}}
+    </div>
+</div>
+<div id="CheckForExistingUser">
+    <form id="ExistingUser" class="form-horizontal">
+        <div class="panel-body cc_body">
+        <div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+        <div class="form-group">
+            <label for="existingemail" class="col-sm-4 cc_salutation_label">Email *</label>
+            <div class="col-sm-8">
+                <input id="existingemail" maxlength="80" existingemail="email" size="20" type="text" placeholder="john.doe@mail.com" class="form-control" required>
+                <div id="errormessage" style="color: red;"></div>
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <div class="col-sm-offset-4 col-sm-8" style="margin-top: 20px;">
+                <input type="button" value="Verify" name="Verify" class="btn btn-default btn-sm submit checkExistingUser cc_submit">
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3"></div>
+    </div></div>
+    </form>
+</div>
+<div id="newLead" style="display: none;">
+    <form action="{{pageLabelMap 'B2B_Web_lead_Form_Action'}}" method="POST" class="form-horizontal">
+     <div class="panel-body cc_body">
+        <input type="hidden" name="oid" value="00D2g0000000iiA">
+        <input type="hidden" name="retURL" value="{{pageLabelMap 'B2B_Web_lead_Return_Url'}}">
+        <!--  ----------------------------------------------------------------------  -->
+        <!--  NOTE: These fields are optional debugging elements. Please uncomment    -->
+        <!--  these lines if you wish to test in debug mode.                          -->
+        <!--  <input type="hidden" name="debug" value=1>                              -->
+        <!--  <input type="hidden" name="debugEmail"                                  -->
+        <!--  value="george.mullins@wescoturf.com">                                   -->
+        <!--  ----------------------------------------------------------------------  -->
+
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+        <div class="form-group">
+            <label for="first_name" class="col-sm-4 cc_salutation_label">First Name *</label>
+            <div class="col-sm-8">
+                <input id="first_name" maxlength="40" name="first_name" size="20" placeholder="John" type="text" class="form-control" required="">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="last_name" class="col-sm-4 cc_salutation_label">Last Name *</label>
+            <div class="col-sm-8">
+                <input id="last_name" maxlength="80" name="last_name" placeholder="Doe" size="20" class="form-control" type="text" required="">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="email" class="col-sm-4 cc_salutation_label">Email *</label>
+            <div class="col-sm-8">
+                <input id="email" maxlength="80" name="email" size="20" placeholder="john.doe@mail.com" type="text" class="form-control" required="">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="company" class="col-sm-4 cc_salutation_label">Company</label>
+            <div class="col-sm-8">
+                <input id="company" maxlength="40" name="company" size="20" type="text" class="form-control">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="street" class="col-sm-4 cc_salutation_label">Street *</label>
+            <div class="col-sm-8">
+                <textarea name="street" rows="3" type="text" wrap="soft" class="form-control" required=""></textarea>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="city" class="col-sm-4 cc_salutation_label">City *</label>
+            <div class="col-sm-8">
+                <input id="city" maxlength="40" name="city" size="20" type="text" class="form-control" required="">
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <label for="state" class="col-sm-4 cc_salutation_label">State/Province *</label>
+            <div class="col-sm-8">
+                <input id="state" maxlength="20" name="state" size="20" type="text" class="form-control" required="">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="zip" class="col-sm-4 cc_salutation_label">Zip/Postal Code *</label>
+            <div class="col-sm-8">
+                <input id="zip" maxlength="20" name="zip" size="20" type="text" required="true" class="form-control">
+            </div>
+        </div><div class="form-group">
+            <label for="country" class="col-sm-4 cc_salutation_label">Country</label>
+            <div class="col-sm-8">
+                <input id="country" maxlength="40" name="country" size="20" type="text" class="form-control">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="phone" class="col-sm-4 cc_salutation_label">Business Phone *</label>
+            <div class="col-sm-8">
+                <input id="phone" maxlength="20" name="phone" size="20" type="text" class="form-control contact-phone" required="">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="mobile" class="col-sm-4 cc_salutation_label">Mobile Phone</label>
+            <div class="col-sm-8">
+                <input id="mobile" maxlength="20" name="mobile" size="20" type="text" class="form-control contact-mobilephone">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="additinal information" class="col-sm-4 cc_salutation_label">Additional Information:</label>
+            <div class="col-sm-8">
+                <textarea id="00N0W000008vnU0" name="00N0W000008vnU0" rows="3" type="text" wrap="soft" class="form-control"></textarea>
+            </div>
+        </div>
+        <div class="form-group" style="display: none;">
+            <label for="lead_source" class="col-sm-4 cc_salutation_label">Lead Source</label>
+            <div class="col-sm-8">
+                <select id="lead_source" name="lead_source" class="form-control" type="hidden"><option value="Web">Web</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group" style="display: none;">
+            <label for="websource" class="col-sm-4 cc_salutation_label">Web Source:</label>
+            <div class="col-sm-8">
+                <input id="00Nd000000606vz" value="Web Registration" maxlength="40" name="00Nd000000606vz" size="20" type="hidden" class="form-control">
+            </div>
+        </div>
+        <div class="form-group" style="display: none;">
+            <label for="recordType" class="col-sm-4 cc_salutation_label">Lead Record Type</label>
+            <div class="col-sm-8">
+                <select id="recordType" name="recordType" class="form-control">
+                    <option value="{{pageLabelMap 'B2B_Web_NewRegistration_RecordType'}}">Website</option>
+                </select>
+            </div>  
+        </div>        
+        <div class="form-group">
+                <div class="col-sm-offset-4 col-sm-8" style="margin-top: 20px;">
+                    <input type="submit" name="submit" class="btn btn-default btn-sm submit cc_submit">
+                </div>
+        </div>
+    </div>
+    <div class="col-md-3"></div>
+    </div>
+    </div>
+    </form>
+</div>

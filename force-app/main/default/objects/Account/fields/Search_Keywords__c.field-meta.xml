@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Search_Keywords__c</fullName>
+    <description>Keywords to use when searching for an account.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Enter any keywords to be used to locate an account.</inlineHelpText>
+    <label>Search Keywords</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>TextArea</type>
+</CustomField>

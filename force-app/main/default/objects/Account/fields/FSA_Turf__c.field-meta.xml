@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FSA_Turf__c</fullName>
+    <description>Golf and SFG Field Service Advisor for Golf and Turf Equipment.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Golf and SFG Field Service Advisor for Golf and Turf Equipment.</inlineHelpText>
+    <label>Turf FSA</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>88A - Bill Berdnik</fullName>
+                <default>false</default>
+                <label>88A - Bill Berdnik</label>
+            </value>
+            <value>
+                <fullName>88B - K.J. Skel</fullName>
+                <default>false</default>
+                <label>88B - K.J. Skel</label>
+            </value>
+            <value>
+                <fullName>88C - Darrin Ellis</fullName>
+                <default>false</default>
+                <label>88C - Darrin Ellis</label>
+            </value>
+            <value>
+                <fullName>88D - Bryan Greenhill</fullName>
+                <default>false</default>
+                <label>88D - Bryan Greenhill</label>
+            </value>
+            <value>
+                <fullName>88E - Joe Bishop</fullName>
+                <default>false</default>
+                <label>88E - Joe Bishop</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>ANONYMOUS</fullName>
+        <default>false</default>
+        <label>ANONYMOUS</label>
+    </customValue>
+    <customValue>
+        <fullName>GOLF</fullName>
+        <default>false</default>
+        <label>GOLF</label>
+    </customValue>
+    <customValue>
+        <fullName>SFG</fullName>
+        <default>false</default>
+        <label>SFG</label>
+    </customValue>
+    <customValue>
+        <fullName>DEALER</fullName>
+        <default>false</default>
+        <label>DEALER</label>
+    </customValue>
+    <customValue>
+        <fullName>IRRIGATION</fullName>
+        <default>false</default>
+        <label>IRRIGATION</label>
+    </customValue>
+    <customValue>
+        <fullName>PREOWNED</fullName>
+        <default>false</default>
+        <label>PREOWNED</label>
+    </customValue>
+    <description>Used on Account, CC Menu and CC Category to control who sees which menu/Category on top.</description>
+    <masterLabel>Account Menu Control</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

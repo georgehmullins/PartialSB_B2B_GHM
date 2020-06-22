@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Irrigation_Target_Account__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Target account flag for Irrigation.  Loaded 4/10/19 based upon accounts that have bought Irrigation.  Using to target related Contacts for email blast.</description>
+    <externalId>false</externalId>
+    <label>Irrigation Target Account</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

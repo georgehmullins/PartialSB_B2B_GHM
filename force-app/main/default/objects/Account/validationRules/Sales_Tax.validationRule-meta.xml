@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sales_Tax</fullName>
+    <active>true</active>
+    <description>Stop users from editing sales tax once it&#39;s been set</description>
+    <errorConditionFormula>ISCHANGED(APTS_County_Sales_Tax__c ) &amp;&amp; NOT(ISBLANK(PRIORVALUE(APTS_County_Sales_Tax__c))) &amp;&amp; $UserRole.Id != &quot;00Ed0000000RJLF&quot;</errorConditionFormula>
+    <errorMessage>Please contact your Salesforce administrator to change the existing County Sales Tax</errorMessage>
+</ValidationRule>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Primary_Account_TM_Pete</fullName>
+    <columns>FULL_NAME</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>CONTACT.TITLE</columns>
+    <columns>CONTACT.PHONE1</columns>
+    <columns>CONTACT.PHONE3</columns>
+    <columns>CONTACT.EMAIL</columns>
+    <columns>Contact_Status__c</columns>
+    <columns>CREATEDBY_USER.ALIAS</columns>
+    <columns>Account_Primary_TM__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Account_Primary_TM__c</field>
+        <operation>startsWith</operation>
+        <value>303</value>
+    </filters>
+    <filters>
+        <field>Contact_Status__c</field>
+        <operation>notEqual</operation>
+        <value>Inactive,No Longer with Company</value>
+    </filters>
+    <label>Primary Account TM - Pete</label>
+    <language>en_US</language>
+    <sharedTo>
+        <allInternalUsers/>
+    </sharedTo>
+</ListView>

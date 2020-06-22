@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>B2B_Community_User__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>B2B User ID populated when User is created and related to Contact for B2B Community</description>
+    <externalId>false</externalId>
+    <label>B2B Community User</label>
+    <referenceTo>User</referenceTo>
+    <relationshipName>B2BContacts</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Lookup</type>
+</CustomField>

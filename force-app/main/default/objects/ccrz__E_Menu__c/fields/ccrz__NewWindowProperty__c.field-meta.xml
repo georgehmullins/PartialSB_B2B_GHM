@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ccrz__NewWindowProperty__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Deprecated. Was used for passing extra parameters to the URL, if Link Type was URL.</description>
+    <externalId>false</externalId>
+    <label>New Window Property</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>TextArea</type>
+</CustomField>

@@ -1,0 +1,173 @@
+<div class="panel panel-default cc_panel cc_myaccount_myorders">
+    <div class="panel-heading cc_heading">
+     <h3 class="panel-title cc_title">{{pageLabelMap 'MyAccount_MyOrders'}}</h3>
+    </div>
+    <div class="panel-body cc_body cc_myaccount_content">
+     <div class="messagingSection-orderhistory-Error" role="alert" style="display: none"></div>
+     <div class="messagingSection-orderhistory-Info" role="alert" style="display: none">
+      <button type="button" class="close cc_close" data-dismiss="alert" aria-label="{{pageLabelMap 'Modal_Aria_Close'}}"><span aria-hidden="true">&#215;</span></button>
+     </div>
+     {{#ifDisplay 'srch.ord'}}
+      <form id="searchOrderForm" class="form-inline searchOrderForm cc_search_order_form cc_form-inline">
+       <div class="form-group form-group-sm ">
+        <label for="searchOrderInput" class="sr-only">Search order</label>
+        <input id="searchOrderInput" type="text" class="form-control searchOrderInput input-text cc_search_order_input" name="searchOrderInput" value="{{searchOrder}}" placeholder="{{pageLabelMap 'MyOrdersInc_SearchOrders'}}"/>
+       </div>
+       <div class="form-group form-group-sm">
+        <select name="searchOrderStatus" value="{{searchOrderStatus}}" class="form-control cc_search_order_status">
+         <option value="">{{pageLabelMap 'MyOrdersInc_AllOrderStatus'}}</option>
+         {{#each this.orderStatusOpts}}
+         <option value="{{this.value}}" {{#ifEquals ../searchOrderStatus this.value}} selected {{/ifEquals}}>{{this.label}}</option>
+         {{/each}}
+        </select>
+       </div>
+       <div class="form-group form-group-sm date">
+        <label for="fromDateStr" class="cc_from_date_str">{{pageLabelMap 'MyOrdersInc_SearchFrom'}}</label>
+        <div class="input-group date">
+         <input type="text" id="fromDateStr" name="fromDateStr" value="{{this.fromDateStr}}" class="form-control requestedDate fromDate cc_from_date" readonly="true">
+         <div class="input-group-addon">
+          <span class="glyphicon glyphicon-th"></span>
+         </div>
+        </div>
+       </div>
+       <div class="form-group form-group-sm date">
+        <label for="toDateStr" class="cc_to_date_str">{{pageLabelMap 'MyOrdersInc_SearchTo'}}</label>
+        <div class="input-group date">
+         <input type="text" id="toDateStr" class="form-control requestedDate toDate cc_to_date" name="toDateStr" value="{{this.toDateStr}}" readonly="true">
+         <div class="input-group-addon">
+          <span class="glyphicon glyphicon-th"></span>
+         </div>
+        </div>
+       </div>
+      </form>
+      <div class="cc_order_search_action">
+       <input type="button" class="btn btn-default btn-sm searchOrder cc_search_order" value="{{pageLabelMap 'MyOrdersButton_SearchOrders'}}"/>
+       <input type="button" class="btn btn-default btn-sm resetOrder cc_reset_order" value="{{pageLabelMap 'MyOrdersButton_ResetOrders'}}"/>
+      </div>
+     {{/ifDisplay}}
+    </div>
+   </div>
+   <div class="orderPaginationSec" />
+   <div class="panel panel-default cc_panel cc_paginator">
+    <div class="table-responsive" style="padding:5px;">
+     <table id="orderTable" class="table table-hover shopping_cart cc_table cc_order_search_table hi">
+      <tr class="cc_table_header_row">
+       <th class="cc_table_header">
+        <span class="cc_table_header_order_number">{{pageLabelMap 'MyInvoices_Order'}}</span>
+       </th>
+       <!--{{#ifDisplay 'MO.DsplExtOrderNumber'}}
+        <th class="cc_table_header">
+         <span class="cc_table_header_external_order_id">{{pageLabelMap 'ExternalOrderID'}}</span>
+        </th>
+       {{/ifDisplay}}
+       {{#ifDisplay 'MO.DsplPONumber'}}
+        <th class="cc_table_header">
+         <span class="cc_table_header_po_number">{{pageLabelMap 'PO Number'}}</span>
+        </th>
+       {{/ifDisplay}}-->
+       <th class="cc_table_header">
+        <span class="cc_table_header_order_date">{{pageLabelMap 'MyOrdersInc_OrderDate'}}</span>
+       </th>
+       <th class="cc_table_header">
+        <span class="cc_table_header_order_date">{{pageLabelMap 'MyInvoices_Invoice'}}</span>
+       </th>
+       <th class="cc_table_header">
+        <span class="cc_table_header_order_date">{{pageLabelMap 'MyOrders_InvoiceDate'}}</span>
+       </th>
+       <th class="cc_table_header">
+        <span class="cc_table_header_order_date">{{pageLabelMap 'MyInvoices_PO'}}</span>
+       </th>
+       
+       <th class="cc_table_header">
+        <span class="cc_table_header_order_amount">{{pageLabelMap 'MyOrdersInc_OrderAmount'}}</span>
+       </th>
+       <th class="cc_table_header">
+        <span class="cc_table_header_order_status">{{pageLabelMap 'MyOrdersInc_Status'}}</span>
+       </th>
+       <!--{{#ifStoreSetting 'Filter_Orders_Based_on_Owner__c'}}
+        &#160;
+       {{else}}
+        <th class="cc_table_header">
+         <span class="cc_table_header_order_owner ord_owner_hdr">{{pageLabelMap 'MyOrdersInc_Owner'}}</span>
+        </th>
+       {{/ifStoreSetting}}-->
+       {{#ifDisplay 'MO.ShActOnOrd'}}
+        <th class="cc_table_header">
+         <span class="cc_table_header_order_actions">{{pageLabelMap 'MyCartsInc_Actions'}}</span>
+        </th>
+        <th class="cc_table_header"></th>
+        <th class="cc_table_header"></th>
+       {{/ifDisplay}}
+
+      </tr>
+      {{#each this.orderList}}
+       <tr class="myAccOrderRows cc_table_row">
+        <td class="cc_table_col">
+         <span class="cc_col_order_number"><a href="#" data-id="{{encryptedId}}" class="gotoOrderDetails cc_goto_order_detailss">{{externalOrderId}}</a></span>
+        </td>
+       <!-- {{#ifDisplay 'MO.DsplExtOrderNumber'}}
+         <td class="cc_table_col">
+          <span class="cc_col_external_order_id">{{externalOrderId}}</span>
+         </td>
+        {{/ifDisplay}}
+        {{#ifDisplay 'MO.DsplPONumber'}}
+         <td class="cc_table_col">
+          <span class="cc_col_po_number">{{poNumber}}</span>
+         </td>
+        {{/ifDisplay}}-->
+        <td class="cc_table_col">
+         <span class="cc_col_order_date">{{orderDateStr}}</span>
+        </td>
+        <td class="cc_table_col">
+         <span class="cc_col_invoice">{{extrinsic.InvoiceNumber}}</span>
+        </td>
+        <td class="cc_table_col">
+         <span class="cc_col_invoic_date">{{extrinsic.InvoiceDate}}</span>
+        </td>
+        <td class="cc_table_col">
+         <span class="cc_col_po">{{poNumber}}</span>
+        </td>
+        <td class="cc_table_col">
+         <span class="cc_col_order_amount">{{price totalAmount currencyIsoCode}}</span>
+        </td>
+        <td class="cc_table_col">
+         <span class="cc_col_order_statust">{{pageLabelMap status}}</span>
+        </td>
+        <!--{{#ifStoreSetting 'Filter_Orders_Based_on_Owner__c'}}
+         &#160;
+        {{else}}
+         <td class="cc_table_col">
+          <span class="cc_col_order_owner ord_owner">{{ownerName}}</span>
+         </td>
+        {{/ifStoreSetting}}-->
+        {{#ifDisplay 'MO.ShActOnOrd'}}
+         <td class="cc_table_col">
+          {{#ifDisplay 'MO.ShReOrdBt'}}
+           {{#if this.canReOrder}}
+            <input type="button" class="btn btn-default btn-sm reorder cc_col_reorder" data-id="{{sfid}}" value="{{pageLabelMap 'MyOrdersInc_Reorder'}}"/>&#160;
+           {{/if}}
+          {{/ifDisplay}}
+         </td>
+         <td class="cc_table_col">
+          {{#if this.canCancel}}
+           {{#ifDisplay 'MO.ShAmdBt'}}
+            {{#if this.canAmend}}
+             <input type="button" class="btn btn-default btn-sm promptCancel promptAmend cc_col_prompt_amend" data-id="{{sfid}}" data-mode="Edit" value="{{pageLabelMap 'Amend'}}"/>&#160;
+            {{/if}}
+           {{/ifDisplay}}
+          {{/if}}
+         </td>
+         <td class="cc_table_col">
+          {{#if this.canCancel}}
+           {{#ifDisplay 'MO.ShCanBt'}}
+            <input type="button" class="btn btn-default btn-sm promptCancel cc_col_prompt_cancel" data-id="{{sfid}}" data-mode="Cancel" value="{{pageLabelMap 'Cancel'}}"/>
+           {{/ifDisplay}}
+          {{/if}}
+         </td>
+        {{/ifDisplay}}
+       </tr>
+      {{/each}}
+     </table>
+    </div>
+    <div id="modalSec"></div>
+   </div>

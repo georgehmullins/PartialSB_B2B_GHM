@@ -1,0 +1,41 @@
+<apex:page applyHtmlTag="false" sidebar="false" showHeader="false" standardStylesheets="false">
+<c:B2B_MyQuotes />
+<script type="text/javascript">
+ jQuery(function($){
+//pubSub listener, called when the My Account view needs to initialize the side menu
+        CCRZ.pubSub.on('view:myaccountView:awaitingSubViewInit', function(viewRef) {
+//pubSub listener function, viewRef is the Backbone view for My Account
+        if(CCRZ.MyAccount.contactInfo){
+                CCRZ.MyAccount.contactInfo.register(viewRef);
+        }
+        if(CCRZ.MyAccount.changePassword){
+                CCRZ.MyAccount.changePassword.register(viewRef);
+        }
+        if(CCRZ.MyAccount.addressBooks){
+                CCRZ.MyAccount.addressBooks.register(viewRef);
+        }
+        if(CCRZ.MyAccount.myCarts){
+                CCRZ.MyAccount.myCarts.register(viewRef);
+        }
+        if(CCRZ.MyAccount.myOrders){
+                CCRZ.MyAccount.myOrders.register(viewRef);
+        }
+        if(CCRZ.MyAccount.myWishlists){
+                CCRZ.MyAccount.myWishlists.register(viewRef);
+        }
+        if(CCRZ.MyAccount.mySubscriptions){
+                CCRZ.MyAccount.mySubscriptions.register(viewRef);
+        }
+        if(CCRZ.MyAccount.myInvoices){
+                CCRZ.MyAccount.myInvoices.register(viewRef);
+}
+//New section
+        if(CCRZ.MyAccount.MyQuotesView){
+                CCRZ.MyAccount.MyQuotesView.register(viewRef);
+}
+//Tell the My Account view that it should proceed with rendering the view
+        CCRZ.pubSub.trigger("view:myaccountView:subViewInit", true);
+        });
+});
+</script>
+</apex:page>

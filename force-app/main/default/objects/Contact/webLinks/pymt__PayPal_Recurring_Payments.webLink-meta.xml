@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pymt__PayPal_Recurring_Payments</fullName>
+    <availability>online</availability>
+    <description>Opens the PaymentConnect PayPal Recurring Payments Terminal for creating recurring payment profiles.</description>
+    <displayType>button</displayType>
+    <linkType>javascript</linkType>
+    <masterLabel>PayPal Recurring Payment</masterLabel>
+    <openType>onClickJavaScript</openType>
+    <protected>false</protected>
+    <url>window.location.href=&quot;/apex/pymt__PayPalARBTerminal?csid={!Contact.Id}&amp;cancelURL=%2F{!Contact.Id}&quot;;</url>
+</WebLink>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ccrz__EffectiveEnd__c</fullName>
+    <deprecated>false</deprecated>
+    <description>The last date that this content will be available</description>
+    <externalId>false</externalId>
+    <label>EffectiveEnd</label>
+    <required>true</required>
+    <trackTrending>false</trackTrending>
+    <type>DateTime</type>
+</CustomField>

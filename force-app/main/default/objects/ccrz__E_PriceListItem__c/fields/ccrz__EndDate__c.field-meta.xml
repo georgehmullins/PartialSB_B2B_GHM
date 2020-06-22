@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ccrz__EndDate__c</fullName>
+    <defaultValue>DATEVALUE(&quot;2099-12-31&quot;)</defaultValue>
+    <deprecated>false</deprecated>
+    <description>The end date for the price list item.  The end date is the date at which the item will no longer be available.  For example if the end date is July 1, 2015 then the price list item is valid on June 30, 2015 but no longer valid on July 1, 2015.</description>
+    <externalId>false</externalId>
+    <label>End Date</label>
+    <required>true</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>

@@ -1,0 +1,717 @@
+<!--
+  @File Name          : B2B_MyQuotes.component
+  @Description        : 
+  @Author             : Rajesh Kumar
+  @Group              : 
+  @Last Modified By   : Rajesh Kumar
+  @Last Modified On   : 6/3/2020, 6:40:52 PM
+  @Modification Log   : 
+  Ver       Date            Author      		    Modification
+  1.0    6/2/2020   Rajesh Kumar     Initial Version
+-->
+<apex:component layout="none" controller="B2B_MyAccountController">
+    <script id="MyQuotesViewSection" type="text/template">
+    <div class="panel panel-default cc_panel cc_myaccount_mywishlist"> <div class="panel-heading cc_heading">
+    <h3 class="panel-title cc_title">{{pageLabelMap 'MyAccount_MyQuotes'}}
+    </h3>
+    </div>
+    <div class="panel-body cc_body cc_myaccount_content">
+        <!-- <p class="cc_create_wishlist"> -->
+            <div class="orderPaginationSec" />
+                <div class="table-responsive">
+                    <table id="cartTable" class="table table-hover cc_table cc_mywishlist_table">
+                        <tr class="cc_table_header_row">
+                            <th class="cc_table_header">
+                                <span class="cc_table_header_name">{{pageLabelMap 'MyAccount_Name'}}</span>
+                            </th>
+                            <th class="cc_table_header">
+                                <span class="cc_table_header_name">{{pageLabelMap 'Shipping Location'}}</span>
+                            </th>
+                            <th class="cc_table_header">
+                                <span class="cc_table_header_date">{{pageLabelMap 'Submitted Date'}}</span>
+                            </th>
+                            <th class="cc_table_header">
+                                <span class="cc_table_header_date">{{pageLabelMap 'Merch total'}}</span>
+                            </th>
+                        </tr>
+                        <tbody id="MyQuotesData">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </script>
+    <script id="MyQuotes" type="text/template">
+        {{#each this.data}}
+        <tr class="cc_table_row">
+            <td class="cc_table_col">
+                <span class="cc_col_name">
+                    <a href="#" data-id="{{sfid}}" data-quote="{{name}}" class="gotoDetails cc_goto_details">{{name}}</a>
+                </span>
+            </td>
+            <td class="cc_table_col">
+                <span class="">
+                    {{shipToR.companyName}}
+                </span>
+            </td>
+            <td class="cc_table_col">
+                <span class="">{{createdDate}}</span>
+            </td>  
+            <td class="cc_table_col">
+                <span class="">{{price subtotalAmount}}</span>
+            </td>                   
+        </tr>
+        {{/each}}
+    </script>
+    <script id="MyAccount-Quotes-Desktop" type="text/template">
+        <div id="quoteDetails" class="table-responsive">
+        </div>
+    </script>
+    <script id="myQuoteDetails" type="text/template">
+    <div class="panel panel-default cc_panel cc_myaccount_mywishlists_container"> <div class="panel-heading cc_heading">
+        <h3 class="panel-title cc_title">{{pageLabelMap 'MyAccount_MyQuotes'}}
+        </h3>
+    </div>
+    <div class="panel-body cc_body">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="well cc_wishlist_heading">
+                    <h4 class="cc_wishlist_name"> <span id="quoteName"></span></h4>
+                </div>
+            </div>
+
+            <!--code start-->
+            <div class="col-xs-12 col-md-4">
+                <h5 class="cc_billing_address_label">{{pageLabelMap 'CheckOut_BillingAddress'}}</h5>
+                <p class="cc_billing">
+                 <span class="cc_billing_address">
+                    <div class="address_selection_display hi">
+                    <p class="cc_addr_company hey">{{this.data.[0].ccrz__Cart__r.ccrz__BillTo__r.ccrz__CompanyName__c}}</p>
+                   <span class="addr_line1 cc_addr_line">{{this.data.[0].ccrz__Cart__r.ccrz__BillTo__r.ccrz__AddressFirstline__c}}</span><br>
+               
+                   <span class="addr_line2 cc_addr_line">{{this.data.[0].ccrz__Cart__r.ccrz__BillTo__r.ccrz__AddressSecondline__c}}</span><br>
+               
+                  <span class="cc_addr_city">{{this.data.[0].ccrz__Cart__r.ccrz__BillTo__r.ccrz__City__c}}</span>
+                   <span class="cc_addr_state">,{{this.data.[0].ccrz__Cart__r.ccrz__BillTo__r.ccrz__State__c}}</span>
+                  <span class="cc_addr_postal">{{this.data.[0].ccrz__Cart__r.ccrz__BillTo__r.ccrz__PostalCode__c}}</span><br>
+                  <span class="cc_addr_country">{{this.data.[0].ccrz__Cart__r.ccrz__BillTo__r.ccrz__Country__c}}</span><br>
+                  <span class="cc_addr_extId">{{this.data.[0].ccrz__Cart__r.ccrz__BillTo__r.ccrz__Partner_Id__c}}</span>
+                 </div>
+                 </span>
+                </p>
+               </div>
+
+
+               <div class="col-xs-12 col-md-4">
+                <h5 class="cc_billing_address_label">{{pageLabelMap 'CheckOut_ShippingAddress'}}</h5>
+                <p class="cc_billing">
+                 <span class="cc_billing_address">
+                    <div class="address_selection_display hi">
+                    <p class="cc_addr_company hey">{{this.data.[0].ccrz__Cart__r.ccrz__ShipTo__r.ccrz__AddressFirstline__c}}</p>
+                   <span class="addr_line1 cc_addr_line">{{this.data.[0].ccrz__Cart__r.ccrz__ShipTo__r.ccrz__CompanyName__c}}</span><br>
+               
+                   <span class="addr_line2 cc_addr_line">{{this.data.[0].ccrz__Cart__r.ccrz__ShipTo__r.ccrz__AddressSecondline__c}}</span><br>
+               
+                  <span class="cc_addr_city">{{this.data.[0].ccrz__Cart__r.ccrz__ShipTo__r.ccrz__City__c}}</span>
+                   <span class="cc_addr_state">{{this.data.[0].ccrz__Cart__r.ccrz__ShipTo__r.ccrz__State__c}}</span>
+                  <span class="cc_addr_postal">{{this.data.[0].ccrz__Cart__r.ccrz__ShipTo__r.ccrz__PostalCode__c}}</span><br>
+                  <span class="cc_addr_country">{{this.data.[0].ccrz__Cart__r.ccrz__ShipTo__r.ccrz__Country__c}}</span><br>
+                  <span class="cc_addr_extId">{{this.data.[0].ccrz__Cart__r.ccrz__ShipTo__r.ccrz__Partner_Id__c}}</span>
+                 </div>
+                 </span>
+                </p>
+              </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-md-4"></div>
+            <div class="col-xs-12 col-md-4"></div>
+                <div class="col-xs-12 col-md-4">
+                <button type="button" class="btn btn-default btn-sm addAllItems cc_checkout_btn pull-right">{{pageLabelMap 'ADD ALL TO CART'}}</button>
+            </div></div>
+    </div>
+    </div>
+
+    <table id="quoteTable" class="table table-hover cc_table cc_mywishlist_table">
+        <tr class="cc_table_header_row">
+            <tr class="cc_table_header_row">
+                <th class="cc_table_header">
+                    <span class="cc_table_header_name">{{pageLabelMap 'PRODUCT'}}</span>
+                </th>
+                <th class="cc_table_header">
+                    <span class="cc_table_header_name">{{pageLabelMap 'DESCRIPTION'}}</span>
+                </th>
+                <th class="cc_table_header">
+                    <span class="cc_table_header_date">{{pageLabelMap 'QTY'}}</span>
+                </th>
+                <th class="cc_table_header">
+                    <span class="cc_table_header_date">{{pageLabelMap 'PRICE'}}</span>
+                </th>
+                <th class="cc_table_header">
+                    <span class="cc_table_header_date">{{pageLabelMap 'TOTAL'}}</span>
+                </th>
+                <th class="cc_table_header">
+                    <span></span>
+                </th>
+            </tr>            
+        </tr>
+        <tbody id="MyQuotesDataseSec">
+            {{#each this.data}}
+        <tr class="cc_table_row">
+            <td class="cc_table_col">
+                <span class="quote-sku">
+                    {{this.ccrz__Product__r.ccrz__SKU__c}}
+                </span>
+            </td>
+            <td class="cc_table_col">
+                <span class="">
+                    {{#if this.ccrz__Product__r.ccrz__ShortDescRT__c}}
+                        {{{textToHTML this.ccrz__Product__r.ccrz__ShortDescRT__c}}}
+                    {{/if}}
+                </span>
+            </td>
+            <td class="cc_table_col">
+                <span class="quote-qty">{{this.ccrz__Quantity__c}}</span>
+            </td>  
+            <td class="cc_table_col">
+                <span class="">{{price this.ccrz__Price__c}}</span>
+            </td>
+            <td class="cc_table_col">
+                <span class="">{{price this.ccrz__ItemTotal__c}}</span>
+            </td>
+            <td class="cc_table_col">
+                <button type="button" data-sku="{{this.ccrz__Product__r.ccrz__SKU__c}}" data-qty="{{this.ccrz__Quantity__c}}" class="btn btn-default btn-sm addItem cc_checkout_btn pull-right">{{pageLabelMap 'ADD TO CART'}}</button>
+            </td>                   
+        </tr>
+        {{/each}}
+        
+        </tbody>
+    </table>
+
+    
+    <!-- {{#each this.data}}
+    <div class="panel panel-default cc_panel cc_myaccount_mywishlists_container">
+    <div class="row cc_wishlist_item">
+        <!-- <div class="col-md-2">
+            <div class="cc_wishlist_image">
+                Test Image
+            </div>
+        </div> 
+        <div class="col-md-2">
+            <!-- <p class="item_title cc_wishlist_item_title">
+                <a href="#" data-id="{{ccrz__Product__r.ccrz__SKU__c}}" class="prodLink cc_prod_link">{{{ccrz__Product__r.Name}}}</a>
+            </p> 
+            <div class="sku cc_sku">
+                {{#ifDisplay 'WL.DsplAddtlSku'}}
+                    <span class="cc_label">{{pageLabelMap 'Checkout_SKU'}}</span>
+                    <span class="cc_value">{{this.ccrz__Product__r.ccrz__SKU__c}}</span>
+                {{/ifDisplay}}
+            </div>
+            {{#ifDisplay 'WL.DsplShortDesc' }}
+                <p class="cc_short_desc">{{{this.prodBean.shortDesc}}}</p>
+            {{/ifDisplay}}
+        </div>
+        <div class="col-md-2">
+            <div class="cart_item wishFinder cc_wish_finder" data-sku="{{this.ccrz__Product__r.ccrz__SKU__c}}">                
+                {{#if this.ccrz__Price__c}}
+                <div class="price_block cc_price_block">
+                    <p class="price cc_price">
+                        <span class="cc_label">{{pageLabelMap 'CartInc_Price'}}</span>
+                        <span class="value cc_value">{{{price this.ccrz__Price__c}}}</span>
+                    </p>
+                </div>          
+                {{/if}}            
+            </div>
+        </div>
+    </div>
+    </div>
+     <hr>
+    {{/each}} -->
+                    
+    </script>
+    <script id="AddtoQuote-Desktop" type="text/template">
+
+    <div class="btn-group dropdown form-group">
+
+    <button type="button" class="btn btn-default btn-sm pickWish" data-id="{{sfid}}">{{pageLabelMap 'AddtoWishlist'}}</button>
+    <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <span class="caret"></span>
+        <span class="sr-only">{{pageLabelMap 'Wishlist_ToggleDropdown'}}</span>
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropWish">
+            <div id="quoteDropDown"></div>
+            <li role="separator" class="divider"></li>
+            <li>
+                <div class="row center-block">
+                    <div class="col-xs-12">
+                        <label for="newWishList" class="sr-only">{{pageLabelMap 'Wishlist_EnterName'}}</label>
+                            <input id="newWishList" type="text" class="newListName form-control" placeholder="{{pageLabelMap 'MyAccount_Name'}}"/>
+                    </div>
+                </div>
+            </li>
+            <li><a href="javascript:void(0);" class="pickWish" data-id="-1">{{pageLabelMap 'Action_CreateWishlist'}}</a></li>
+        </ul>
+    </div>
+    </script>
+    <script id="quoteDropDownTemp" type="text/template">
+
+    {{#each this.data}}
+
+    <li><a href="javascript:void(0);" class="pickWish" data-id="{{encryptedId}}">{{{name}}}</a></li>
+    {{/each}}</script>
+
+    <script>
+    var isDirectQuoteNumber = true; 
+    var lineItemData={};
+    CCRZ.MyAccount = _.extend(CCRZ.MyAccount||{},{
+    MyQuotes :{
+        register : function(registrar){
+            registrar.registerNewView('myQuotes', CCRZ.processPageLabelMap('MyAccount_MyQuotes'), new CCRZ.
+                                        views.myQuotesView());
+            }
+        },
+        
+    });
+
+    jQuery(function($) {
+
+    CCRZ.views.myQuotesView = CCRZ.CloudCrazeView.extend({
+        templatePhone : CCRZ.util.template('MyQuotesViewSection'),
+        templateDesktop : CCRZ.util.template('MyQuotesViewSection'),
+        managedSubView : true,
+        viewName : "myQuotesView",
+        init : function(){
+            this.detailsView = new CCRZ.views.myQuotesDetailView();
+        },
+        initSetup : function(callback){
+            callback();
+        },
+        renderPhone : function() {
+            this.$el.html(this.templatePhone(this));
+        },
+        renderDesktop : function() {
+            this.$el.html(this.templateDesktop(this));
+            CCRZ.subsc.MyRemote.getQuotes();
+        },
+        events: {
+            "click .gotoDetails" : "gotoDetails",
+        },
+        gotoDetails: function (event) {
+            var objLink = $(event.target);
+            var quoteId = objLink.data("id");
+            //var selList = this.wishlistData.get(id);
+            this.detailsView.generateDisplay(quoteId,this.$el);
+            //this.detailsView.generateDisplay();
+        },
+    });
+    });
+
+    jQuery(function ($) {
+    CCRZ.subsc = _.extend(CCRZ.subsc || {});
+    CCRZ.subsc.MyRemote = _.extend(CCRZ.RemoteInvocation, {
+        className: 'B2B_MyAccountController',
+        getQuotes: function () {
+            this.invokeCtx('getUserQuotes',
+                            function (resp, evt) {
+                                console.log('resp cart'+JSON.stringify(resp));
+                                if (evt.status) {
+                                    if (resp && resp.success) {//response was successful
+                                        
+                                        for(var i=0;i<resp.data.length;i++){
+                                            resp.data[i].lastModifiedDate = dateFromString(resp.data[i].lastModifiedDate);
+                                            resp.data[i].createdDate = dateFromString(resp.data[i].createdDate);
+                                        }
+                                        var hbTemplate = $("#MyQuotes").html();
+                                        var template = Handlebars.compile(hbTemplate);
+                                        var compiledHtml = template(resp);
+                                        $('#MyQuotesData').html(compiledHtml);
+                                            
+                                        
+                                        if(CCRZ.pagevars.queryParams.quote!= undefined&& CCRZ.pagevars.queryParams.quote!='' && isDirectQuoteNumber){
+                                            isDirectQuoteNumber = false;
+                                            $('[data-quote="Quote-'+CCRZ.pagevars.queryParams.quote+'"]').click();
+                                            var changedUrl = window.location.href.replace('&quote='+CCRZ.pagevars.queryParams.quote,'');
+                                            if (typeof (history.pushState) != "undefined") {
+                                                history.pushState('', '', changedUrl);
+                                            }
+                                        }
+                                        //getMyQuotesResponse(resp);
+                                    } else {
+                                        //handle response error here
+                                        // showErrorMessage(resp.data.message);
+                                        // $('.loader').hide();
+                                    }
+                                } else {
+                                    // showErrorMessage(resp.data.message);
+                                    // $('.loader').hide();
+                                    //handle standard RemoteAction failure here
+                                }
+                            },
+                            {
+                                buffer: false, //this call will be executed by itself
+                                nmsp: false //defines that this is a call to a subscriber class
+                            }
+                            );//end invokeCtx call
+        }
+        
+    });
+    CCRZ.subsc.MyRemote = _.extend(CCRZ.RemoteInvocation, {
+        className: 'B2B_MyAccountController',
+        getQuoteNames: function () {
+            this.invokeCtx('getUserQuotes',
+                            function (resp, evt) {
+                                console.log('resp cart'+JSON.stringify(resp));
+                                if (evt.status) {
+                                    if (resp && resp.success) {
+                                        var hbTemplate = $("#quoteDropDownTemp").html();
+                                        var template = Handlebars.compile(hbTemplate);
+                                        var compiledHtml = template(resp);
+                                        $('#quoteDropDown').html(compiledHtml);
+                                        
+                                        //getMyQuotesResponse(resp);
+                                    } else {
+                                        //handle response error here
+                                        // showErrorMessage(resp.data.message);
+                                        // $('.loader').hide();
+                                    }
+                                } else {
+                                    // showErrorMessage(resp.data.message);
+                                    // $('.loader').hide();
+                                    //handle standard RemoteAction failure here
+                                }
+                            },
+                            {
+                                buffer: false, //this call will be executed by itself
+                                nmsp: false //defines that this is a call to a subscriber class
+                            }
+                            );//end invokeCtx call
+        }
+        
+    });
+
+    }); 
+    jQuery(function ($) {
+    CCRZ.views.myQuotesDetailView = CCRZ.CloudCrazeView.extend({
+        templatePhone : CCRZ.util.template('MyAccount-Quotes-Desktop'),
+        templateDesktop : CCRZ.util.template('MyAccount-Quotes-Desktop'),
+        viewName : "myQuotesDetailView",
+        events: {
+            "click .prodLink" : "gotoProductDetail",
+            "click .addItem" : "addItem",
+            "click .deleteItem" : "deleteItem",
+            "click .triggerDrop" : "openDrop",
+            "click .addAllItems" : "addAllItems"
+        },
+        init:function(callback){
+            //this.pickerView = new CCRZ.views.myQuotesPickerView();
+            //callback();
+        },
+        
+        initSetup : function(callback){
+            alert('Rendering the detail view');
+            callback();
+            
+        },
+        generateDisplay : function(quoteId,ele){
+                this.setElement(ele);
+            
+            CCRZ.subsc.MyRemote.getQuotDetails(quoteId);
+            this.render();
+            
+        },
+        renderPhone : function() {
+            this.$el.html(this.templatePhone(this));
+        },
+        renderDesktop : function() {
+            this.$el.html(this.templateDesktop(this));
+        },
+        render : function() {
+            if (CCRZ.display.isPhone()){
+                this.renderPhone();
+            }else{
+                this.renderDesktop();
+            }
+            CCRZ.pubSub.trigger("view:"+this.viewName+":refresh", this);
+            setTimeout(function(){ 
+                this.pickerView = new CCRZ.views.myQuotesPickerView(); },
+                        500);
+            
+        },
+        gotoProductDetail: function(event) {
+            var objLink = $(event.target);
+            var id = objLink.data("id");
+            productDetails(id);
+        },
+        addItem: function(event) {
+            $("#overlay-myQuotes").removeClass("hide-div");
+            var objLink = $(event.target);
+            var sku = objLink.data("sku");
+            var qty = objLink.data("qty");
+            CCRZ.subsc.MyRemote.addToCart(sku,qty,objLink);
+            
+        },
+        addAllItems: function(event) {
+            $("#overlay-myQuotes").removeClass("hide-div");
+            CCRZ.subsc.MyRemote.addAllToCart(JSON.stringify(lineItemData));
+            
+        },
+        deleteItem: function(event) {
+            var objLink = $(event.target);
+            var id = objLink.data("id");
+            var pid = objLink.data("pid");
+            var sku = objLink.data("sku");
+            var qty = objLink.data("qty");
+            CCRZ.subsc.MyRemote.deleteFromCart(id,pid,sku,qty);
+            CCRZ.pubSub.trigger("view:"+this.viewName+":refresh", this);
+        },
+        
+    });
+
+
+
+    });
+    jQuery(function ($) {
+    CCRZ.views.myQuotesPickerView = CCRZ.CloudCrazeView.extend({
+        templatePhone : CCRZ.util.template('AddtoQuote-Desktop'),
+        templateDesktop : CCRZ.util.template('AddtoQuote-Desktop'),
+        viewName : "myQuotesPickerView ",
+        events: {
+            "click .pickWish" : "addItem",
+            "change .selpickWish" : "selItem",
+            "click .newListName" : "focusInput"
+        },
+        init: function() {
+            this.setElement($('.quoteButtons'));
+            this.render();
+        },
+        render : function() {
+            this.setElement($('.quoteButtons'));
+            console.log('render');
+            if (CCRZ.display.isPhone()){
+                this.$el.html(this.templateDesktop(this));
+            }else{
+                this.$el.html(this.templateDesktop(this));
+                CCRZ.subsc.MyRemote.getQuoteNames();
+            }
+            CCRZ.pubSub.trigger("view:"+this.viewName+":refresh", this);
+        },
+        focusInput: function(event) {
+            alert('focus');
+            event.stopPropagation();
+        },
+        addItem: function(event) {
+            var objLink = $(event.target);
+            var id = objLink.data("id");
+            this.processAddItem(objLink, id);
+        },
+        selItem: function(event) {
+            var objLink = $(event.currentTarget);
+            var id = objLink.val();
+            this.processAddItem(objLink, id);
+        },
+        processAddItem: function(obj, val) {
+            var parentObj = obj.closest('.wishFinder');
+            var sku = parentObj.data("sku");
+            var createName = obj.closest('.btn-group.dropdown').find('.newListName').val();
+            alert('*** createName'+createName);
+            alert(val);
+            CCRZ.subsc.MyRemote.AddtoCartOrCreateCart(sku,val,createName);
+            CCRZ.pubSub.trigger("view:"+this.viewName+":refresh", this);
+            /* var v = this;
+            this.invokeContainerLoadingCtx($('.deskLayout'), 'handleAddtoWishlist', sku, val, createName, function(response) {
+                CCRZ.pubSub.trigger('refreshWishlists', val);
+                if (val == '-1') {
+                    v.refresh();
+                }
+            });*/
+        }
+        
+        
+    });
+
+
+
+    });
+
+    jQuery(function ($) {
+    CCRZ.subsc = _.extend(CCRZ.subsc || {});
+    CCRZ.subsc.MyRemote = _.extend(CCRZ.RemoteInvocation, {
+        className: 'B2B_MyAccountController',
+        getQuotDetails: function (quoteId) {
+            this.invokeCtx('getUserQuoteLineItems',quoteId,
+                            function (resp, evt) {
+                                console.log('quoteId'+quoteId);
+                                console.log('resp'+JSON.stringify(resp));
+                                if (evt.status) {
+                                    lineItemData= {};
+                                    if (resp && resp.success) {//response was successful
+                                        var hbTemplate = $("#myQuoteDetails").html();
+                                        var template = Handlebars.compile(hbTemplate);
+                                        var compiledHtml = template(resp);
+                                        $('#quoteDetails').html(compiledHtml);
+                                        $("#quoteName").text(resp.data[0].ccrz__Cart__r.ccrz__Name__c);
+                                        //getMyQuotesResponse(resp);
+                                    } else {
+                                        //handle response error here
+                                        // showErrorMessage(resp.data.message);
+                                        // $('.loader').hide();
+                                    }
+                                    $.each(resp.data,function(index,data){
+                                        lineItemData[data.ccrz__Product__r.ccrz__SKU__c] = data.ccrz__Quantity__c;
+                                    });
+                                } else {
+                                    // showErrorMessage(resp.data.message);
+                                    // $('.loader').hide();
+                                    //handle standard RemoteAction failure here
+                                }
+                            },
+                            {
+                                buffer: false, //this call will be executed by itself
+                                nmsp: false //defines that this is a call to a subscriber class
+                            }
+                            );//end invokeCtx call
+        }
+        
+    });
+
+    CCRZ.subsc.MyRemote = _.extend(CCRZ.RemoteInvocation, {
+        className: 'B2B_MyAccountController',
+        addToCart: function (sku,qty,objLink) {
+            this.invokeCtx('handleAddToCart',sku,qty,
+                            function (resp, evt) {
+                                if (evt.status) {
+                                    if (resp && resp.success) {
+                                        var cartId = resp.data;
+                                        console.log('*** cartId'+cartId);
+                                        CCRZ.pagevars.currentCartID = cartId;
+                                        //cart change will update cookie
+                                        CCRZ.pubSub.trigger('cartChange', cartId);
+                                    } else {
+                                        //handle response error here
+                                        // showErrorMessage(resp.data.message);
+                                        // $('.loader').hide();
+                                    }
+                                } else {
+                                    // showErrorMessage(resp.data.message);
+                                    // $('.loader').hide();
+                                    //handle standard RemoteAction failure here
+                                }
+                                $("#overlay-myQuotes").addClass("hide-div");
+                            },
+                            {
+                                buffer: false, //this call will be executed by itself
+                                nmsp: false //defines that this is a call to a subscriber class
+                            }
+                            );//end invokeCtx call
+        },
+        addAllToCart: function (lineItemData) {
+            this.invokeCtx('handleAddAllToCart',lineItemData,
+                            function (resp, evt) {
+                                if (evt.status) {
+                                    if (resp && resp.success) {
+                                        //cart change will update cookie
+                                        CCRZ.pubSub.trigger('cartChange', CCRZ.pagevars.currentCartID);
+                                    } else {
+                                        
+                                    }
+                                } else {
+                                    // showErrorMessage(resp.data.message);
+                                    // $('.loader').hide();
+                                    //handle standard RemoteAction failure here
+                                }
+                                $("#overlay-myQuotes").addClass("hide-div");
+                            },
+                            {
+                                buffer: false, //this call will be executed by itself
+                                nmsp: false //defines that this is a call to a subscriber class
+                            }
+                            );//end invokeCtx call
+        }
+        
+    });
+    CCRZ.subsc.MyRemote = _.extend(CCRZ.RemoteInvocation, {
+        className: 'B2B_MyAccountController',
+        deleteFromCart: function (id,pid,sku,qty) {
+            this.invokeCtx('handleDelFromCart',id,pid,sku,qty,
+                            function (resp, evt) {
+                                console.log('*** '+JSON.stringify(resp));
+                                console.log('*** evt'+JSON.stringify(evt));
+                                if (evt.status) {
+                                    if (resp && resp.success) {
+                                        var cartId = resp.data;
+                                        
+                                    } else {
+                                        
+                                    }
+                                } else {
+                                    
+                                }
+                            },
+                            {
+                                buffer: false, //this call will be executed by itself
+                                nmsp: false //defines that this is a call to a subscriber class
+                            }
+                            );//end invokeCtx call
+        }
+        
+    });
+    CCRZ.subsc.MyRemote = _.extend(CCRZ.RemoteInvocation, {
+        className: 'B2B_MyAccountController',
+        AddtoCartOrCreateCart: function (sku,val,createName) {
+            this.invokeCtx('handleAddtoCartOrCreateCart',sku,val,createName,
+                            function (resp, evt) {
+                                console.log('*** '+JSON.stringify(resp));
+                                console.log('*** evt'+JSON.stringify(evt));
+                                if (evt.status) {
+                                    if (resp && resp.success) {
+                                        var cartId = resp.data;
+                                        
+                                    } else {
+                                        
+                                    }
+                                } else {
+                                    
+                                }
+                            },
+                            {
+                                buffer: false, //this call will be executed by itself
+                                nmsp: false //defines that this is a call to a subscriber class
+                            }
+                            );//end invokeCtx call
+        }
+        
+    });
+    });
+
+    function dateFromString(dateStr){
+        var date = "\/Date("+dateStr+")\/";
+        var nowDate = new Date(parseInt(date.substr(6)));
+        var datefor = new Date(nowDate);
+        var formattedDate = formatDate(nowDate);
+        return formattedDate
+    }
+
+    function formatDate(dateVal) {
+        var newDate = new Date(dateVal);
+        var sMonth = padValue(newDate.getMonth() + 1);
+        var sDay = padValue(newDate.getDate());
+        var sYear = newDate.getFullYear();
+        var sHour = newDate.getHours();
+        var sMinute = padValue(newDate.getMinutes());
+        var sAMPM = "AM";
+        var iHourCheck = parseInt(sHour);
+        if (iHourCheck > 12) {
+        sAMPM = "PM";
+        sHour = iHourCheck - 12;
+        }
+        else if (iHourCheck === 0) {
+        sHour = "12";
+        }
+        sHour = padValue(sHour);
+        return sMonth + "/" + sDay + "/" + sYear + " " + sHour + ":" + sMinute + " " + sAMPM;
+    }
+
+    function padValue(value) {
+        return (value < 10) ? "0" + value : value;
+    }
+    </script>
+</apex:component>

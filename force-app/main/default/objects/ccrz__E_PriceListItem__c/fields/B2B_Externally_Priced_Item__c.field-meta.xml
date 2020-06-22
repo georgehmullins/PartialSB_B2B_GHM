@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>B2B_Externally_Priced_Item__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Pricing for the PLI record would need to be provided by calling API to Prelude to get pricing.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Pricing for the PLI record would need to be provided by calling API to Prelude to get pricing.</inlineHelpText>
+    <label>Externally Priced Item</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

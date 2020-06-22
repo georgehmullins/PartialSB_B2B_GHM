@@ -1,0 +1,73 @@
+<div id="quickOrder_content">
+   <div id="myquickorderreference">
+      <h2>Quick Order Entry - Order Form</h2>
+      <h5 id="errDiv" class="textRed hide-div">Enter quantity value</h5>
+      <div>
+         <div id="quickorderreference" class="table-responsive">
+            <table class="stats" cellspacing="0">
+               <thead>
+                  <tr>
+                     {{#isMobile}}
+                        <th class="orderlineMobile">#</th>
+                        <th class="referenceMobile">Reference</th>
+                        <th class="descriptionMobile">Product Description</th>
+                        <th class="qtyMobile">Qty</th>
+                        <th class="availabilityMobile">Availability</th>
+                        <th class="priceMobile">Price</th>
+                        <th class="SuggestedRetailMobile"></th>
+                        <th class="removeTextMobile">Remove</th>
+                     {{else}}
+                     <!-- <th>Item</th> -->
+                     <th class="orderline">Line</th>
+                     <th class="reference">Reference</th>
+                     <th class="description">Product Description</th>
+                     <th class="qty">Qty</th>
+                     <th class="availability">Availability</th>
+                     <th class="price">Price</th>
+                     <th class="SuggestedRetail"></th>
+                     <th class="removeText">Remove</th>
+                     {{/isMobile}}
+                  </tr>
+               </thead>
+               <tbody>
+                  {{#each rows}}
+                     
+                        <tr id="row-{{this}}">
+                           <td class="line">{{this}}</td>
+                           <td><input type="text"  class="skuEnter" name="{{this}}"></td>
+                           <td class="description"></td>
+                           <td class="qtyCount"><input type="text" class="qty" name="{{this}}"></td>
+                           <td class="availability"></td>
+                           <td class="td-price price"></td>
+                           <td class="td-price retail"></td>
+                           <td><a class="remove" id="{{this}}"><img id="delete" src="https://www.wescoturf.com/modules/quickorderreference/img/delete.gif" alt="delete" class="delete"></a></td>
+                        </tr>
+                     
+                  {{/each}}
+                  {{#each singleArray}}
+                    
+                    <tr id="row-{{this}}">
+                     <td class="line">{{this}}</td>
+                     <td><input type="text" class="skuEnter" name="{{this}}"></td>
+                     <td class="description">Product not found.<br>PRODUCT NOT FOUND</td>
+                     <td class="qtyCount"><input type="text" class="qty" name="{{this}}"></td>
+                     <td class="availability"></td>
+                     <td class="td-price price"></td>
+                     <td class="td-price retail"></td>
+                     <td><a class="remove" id="{{this}}"><img id="delete" src="https://www.wescoturf.com/modules/quickorderreference/img/delete.gif" alt="delete" class="delete"></a></td>
+                  </tr>
+                  
+                  {{/each}}
+               </tbody>
+            </table>
+            <a href="javascript:void(0);" title="" class="add-line" data-array="{{sumOfArray}}">[+] Add another line</a>
+            <br>
+            <a href="javascript:void(0);" title="" class="add-ten-line">[+] Add 10 lines</a>
+            <!--  <input id="isDealer" type="hidden" name="isDealer" value="">  -->
+            <div style="text-align: center; width: 100%; margin-top: 20px; margin-bottom: 20px;">
+               <a href="#" id="updateSub"><input type="submit" name="submitUpdateCart" id="submitUpdateCart" value="Update Cart" class="button"></a>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>

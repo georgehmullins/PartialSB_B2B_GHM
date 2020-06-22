@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>B2B_Account_Menu_Control__c</fullName>
+    <description>For B2B Accounts - Must be populated to control which menus will be displayed</description>
+    <externalId>false</externalId>
+    <inlineHelpText>For B2B Accounts - Must be populated to control which menus will be displayed</inlineHelpText>
+    <label>B2B Account Menu Control</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetName>B2B_Account_Menu_Control</valueSetName>
+    </valueSet>
+</CustomField>

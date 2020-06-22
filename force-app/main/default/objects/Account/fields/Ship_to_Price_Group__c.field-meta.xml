@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Ship_to_Price_Group__c</fullName>
+    <description>Rollup Helper</description>
+    <externalId>false</externalId>
+    <inlineHelpText>For reference only</inlineHelpText>
+    <label>National Ship-to Price Group</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>TextArea</type>
+</CustomField>

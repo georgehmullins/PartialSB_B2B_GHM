@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pymt__Member_Pricing_Enabled__c</fullName>
+    <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
+    <description>Check this box to allow PaymentConnect add-ons to present member-only pricing to this customer.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Check this box to allow PaymentConnect add-ons to present member-only pricing to this customer.</inlineHelpText>
+    <label>Member Pricing Enabled</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

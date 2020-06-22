@@ -1,0 +1,545 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>APTS</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>APTS_Wesco_Hasbeensubmittedforapproval</shortDescription>
+        <value>has been submitted for your review and approval.</value>
+    </labels>
+    <labels>
+        <fullName>APTS_Opportunity_Sync</fullName>
+        <categories>APTS</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>APTS_Opportunity_Sync</shortDescription>
+        <value>Make Primary and Synchronize with Oppty</value>
+    </labels>
+    <labels>
+        <fullName>COMMSELTEMPLATE_REPTAG001</fullName>
+        <categories>COMMSELTEMPLATE,Select Mail Merge Template,COMM</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMMSELTEMPLATE_REPTAG001</shortDescription>
+        <value>ServiceMax Mail Merge</value>
+    </labels>
+    <labels>
+        <fullName>COMMSELTEMPLATE_REPTAG002</fullName>
+        <categories>COMMSELTEMPLATE,Select Mail Merge Template,COMM</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMMSELTEMPLATE_REPTAG002</shortDescription>
+        <value>Generate Report</value>
+    </labels>
+    <labels>
+        <fullName>COMMSELTEMPLATE_REPTAG003</fullName>
+        <categories>COMMSELTEMPLATE,Select Mail Merge Template,COMM</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMMSELTEMPLATE_REPTAG003</shortDescription>
+        <value>Generate</value>
+    </labels>
+    <labels>
+        <fullName>COMMSELTEMPLATE_REPTAG004</fullName>
+        <categories>COMMSELTEMPLATE,Select Mail Merge Template,COMM</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMMSELTEMPLATE_REPTAG004</shortDescription>
+        <value>Cancel</value>
+    </labels>
+    <labels>
+        <fullName>COMMSELTEMPLATE_REPTAG005</fullName>
+        <categories>COMMSELTEMPLATE,Select Mail Merge Template,COMM</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMMSELTEMPLATE_REPTAG005</shortDescription>
+        <value>Please select a ServiceMax template from the list below and click Generate</value>
+    </labels>
+    <labels>
+        <fullName>COMMSELTEMPLATE_REPTAG006</fullName>
+        <categories>COMMSELTEMPLATE,Select Mail Merge Template,COMM</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMMSELTEMPLATE_REPTAG006</shortDescription>
+        <value>Select Template</value>
+    </labels>
+    <labels>
+        <fullName>COMMSELTEMPLATE_REPTAG007</fullName>
+        <categories>COMMSELTEMPLATE,Select Mail Merge Template,COMM</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMMSELTEMPLATE_REPTAG007</shortDescription>
+        <value>Generate Report As</value>
+    </labels>
+    <labels>
+        <fullName>COMMSELTEMPLATE_REPTAG008</fullName>
+        <categories>COMMSELTEMPLATE,Select Mail Merge Template,COMM</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMMSELTEMPLATE_REPTAG008</shortDescription>
+        <value>Attach Report To</value>
+    </labels>
+    <labels>
+        <fullName>COMMSELTEMPLATE_REPTAG009</fullName>
+        <categories>COMMSELTEMPLATE,Select Mail Merge Template,COMM</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMMSELTEMPLATE_REPTAG009</shortDescription>
+        <value>Please select one or more records from the list first.</value>
+    </labels>
+    <labels>
+        <fullName>COMMSELTEMPLATE_REPTAG010</fullName>
+        <categories>COMMSELTEMPLATE,Select Mail Merge Template,COMM</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMMSELTEMPLATE_REPTAG010</shortDescription>
+        <value>Go Back</value>
+    </labels>
+    <labels>
+        <fullName>ChoosePicklistValues</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ChoosePickListValues</shortDescription>
+        <value>Choose Pick List Values</value>
+    </labels>
+    <labels>
+        <fullName>Constraint_Rule_Results</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Constraint Rule Results</shortDescription>
+        <value>Constraint Rule Results</value>
+    </labels>
+    <labels>
+        <fullName>Default_Contact_ID_for_Work_Order_Emails</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Default_Contact_ID_for_Work_Order_Emails</shortDescription>
+        <value>003d000001iT5Vu</value>
+    </labels>
+    <labels>
+        <fullName>Edit_Financing_Details</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Edit Financing Details</shortDescription>
+        <value>Edit Financing Details</value>
+    </labels>
+    <labels>
+        <fullName>HOME_TAG001</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>HOME_TAG001</shortDescription>
+        <value>ServiceMax Community</value>
+    </labels>
+    <labels>
+        <fullName>HOME_TAG002</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>HOME_TAG002</shortDescription>
+        <value>Navigating to ServiceMax community. Please wait...</value>
+    </labels>
+    <labels>
+        <fullName>HasBeenRejected</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>HasBeenRejected</shortDescription>
+        <value>has been rejected</value>
+    </labels>
+    <labels>
+        <fullName>NewLine</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>NewLine</shortDescription>
+        <value>-
+-</value>
+    </labels>
+    <labels>
+        <fullName>Org_Wide_Email_Address_Record</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Org_Wide_Email_Address_Record</shortDescription>
+        <value>0D2d0000000TOTy</value>
+    </labels>
+    <labels>
+        <fullName>PORDREP001_REPTAG001</fullName>
+        <categories>PORDREP001,Parts Order Report,PORD</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PORDREP001_REPTAG001</shortDescription>
+        <value>No Parts Order data</value>
+    </labels>
+    <labels>
+        <fullName>PORDREP001_REPTAG002</fullName>
+        <categories>PORDREP001,Parts Order Report,PORD</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PORDREP001_REPTAG002</shortDescription>
+        <value>RETURNED MATERIAL AUTHORIZATION</value>
+    </labels>
+    <labels>
+        <fullName>PORDREP001_REPTAG003</fullName>
+        <categories>PORDREP001,Parts Order Report,PORD</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PORDREP001_REPTAG003</shortDescription>
+        <value>SHIPMENT NOTE</value>
+    </labels>
+    <labels>
+        <fullName>PORDREP001_REPTAG004</fullName>
+        <categories>PORDREP001,Parts Order Report,PORD</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PORDREP001_REPTAG004</shortDescription>
+        <value>From Location:</value>
+    </labels>
+    <labels>
+        <fullName>PORDREP001_REPTAG005</fullName>
+        <categories>PORDREP001,Parts Order Report,PORD</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PORDREP001_REPTAG005</shortDescription>
+        <value>To Location:</value>
+    </labels>
+    <labels>
+        <fullName>PREQREP001_REPTAG001</fullName>
+        <categories>PREQREP001,Parts Request Report,PREQ</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PREQREP001_REPTAG001</shortDescription>
+        <value>No Parts Request data</value>
+    </labels>
+    <labels>
+        <fullName>PREQREP001_REPTAG002</fullName>
+        <categories>PREQREP001,Parts Request Report,PREQ</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PREQREP001_REPTAG002</shortDescription>
+        <value>PARTS REQUEST</value>
+    </labels>
+    <labels>
+        <fullName>SCONREP001_REPTAG001</fullName>
+        <categories>SCONREP001,Service Contract Report,SCON</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SCONREP001_REPTAG001</shortDescription>
+        <value>No Contract data.</value>
+    </labels>
+    <labels>
+        <fullName>SCONREP001_REPTAG002</fullName>
+        <categories>SCONREP001,Service Contract Report,SCON</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SCONREP001_REPTAG002</shortDescription>
+        <value>SERVICE CONTRACT</value>
+    </labels>
+    <labels>
+        <fullName>WORDREP001_REPTAG001</fullName>
+        <categories>WORDREP001,Work Order Report,WORD</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>WORDREP001_REPTAG001</shortDescription>
+        <value>No Service Quote data</value>
+    </labels>
+    <labels>
+        <fullName>WORDREP001_REPTAG002</fullName>
+        <categories>WORDREP001,Work Order Report,WORD</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>WORDREP001_REPTAG002</shortDescription>
+        <value>SERVICE QUOTE</value>
+    </labels>
+    <labels>
+        <fullName>WORDREP001_REPTAG003</fullName>
+        <categories>WORDREP001,Work Order Report,WORD</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>WORDREP001_REPTAG003</shortDescription>
+        <value>Bill To:</value>
+    </labels>
+    <labels>
+        <fullName>WORDREP001_REPTAG004</fullName>
+        <categories>WORDREP001,Work Order Report,WORD</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>WORDREP001_REPTAG004</shortDescription>
+        <value>No Work Order data.</value>
+    </labels>
+    <labels>
+        <fullName>WORDREP001_REPTAG005</fullName>
+        <categories>WORDREP001,Work Order Report,WORD</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>WORDREP001_REPTAG005</shortDescription>
+        <value>SERVICE REPORT</value>
+    </labels>
+    <labels>
+        <fullName>WORDREP001_REPTAG006</fullName>
+        <categories>WORDREP001,Work Order Report,WORD</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>WORDREP001_REPTAG006</shortDescription>
+        <value>Service Location:</value>
+    </labels>
+    <labels>
+        <fullName>WTU_Class1</fullName>
+        <categories>WTU</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>WTU Class1</shortDescription>
+        <value>Sprayers</value>
+    </labels>
+    <labels>
+        <fullName>WTU_Class10</fullName>
+        <categories>WTU</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>WTU Class10</shortDescription>
+        <value>Lynx Level 3</value>
+    </labels>
+    <labels>
+        <fullName>WTU_Class11</fullName>
+        <categories>WTU</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>WTU Class11</shortDescription>
+        <value>Lynx Level 2</value>
+    </labels>
+    <labels>
+        <fullName>WTU_Class12</fullName>
+        <categories>WTU</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>WTU Class12</shortDescription>
+        <value>Kohler</value>
+    </labels>
+    <labels>
+        <fullName>WTU_Class13</fullName>
+        <categories>WTU</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>WTU Class13</shortDescription>
+        <value>Electrical</value>
+    </labels>
+    <labels>
+        <fullName>WTU_Class14</fullName>
+        <categories>WTU</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>WTU Class14</shortDescription>
+        <value>Basic Irrigation</value>
+    </labels>
+    <labels>
+        <fullName>WTU_Class15</fullName>
+        <categories>WTU</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>WTU Class15</shortDescription>
+        <value>Club Car Service Training</value>
+    </labels>
+    <labels>
+        <fullName>WTU_Class16</fullName>
+        <categories>WTU</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>WTU Class16</shortDescription>
+        <value>Hydraulic</value>
+    </labels>
+    <labels>
+        <fullName>WTU_Class17</fullName>
+        <categories>WTU</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>WTU Class17</shortDescription>
+        <value>Briggs &amp; Stratton Level 2</value>
+    </labels>
+    <labels>
+        <fullName>WTU_Class18</fullName>
+        <categories>WTU</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>WTU Class18</shortDescription>
+        <value>Sprayers Level 2 Operator</value>
+    </labels>
+    <labels>
+        <fullName>WTU_Class19</fullName>
+        <categories>WTU</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>WTU Class19</shortDescription>
+        <value>Sprayers Level 2 Mechanic</value>
+    </labels>
+    <labels>
+        <fullName>WTU_Class2</fullName>
+        <categories>WTU</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>WTU Class2</shortDescription>
+        <value>Reel Grinding Level 2</value>
+    </labels>
+    <labels>
+        <fullName>WTU_Class20</fullName>
+        <categories>WTU</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>WTU Class20</shortDescription>
+        <value>5 Levels of Leadership</value>
+    </labels>
+    <labels>
+        <fullName>WTU_Class21</fullName>
+        <categories>WTU</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>WTU Class21</shortDescription>
+        <value>Coaching a Winning Team</value>
+    </labels>
+    <labels>
+        <fullName>WTU_Class22</fullName>
+        <categories>WTU</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>WTU Class22</shortDescription>
+        <value>Electrical Level 2</value>
+    </labels>
+    <labels>
+        <fullName>WTU_Class23</fullName>
+        <categories>WTU</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>WTU Class23</shortDescription>
+        <value>Hybrid Electrical Level 2</value>
+    </labels>
+    <labels>
+        <fullName>WTU_Class24</fullName>
+        <categories>WTU</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>WTU Class24</shortDescription>
+        <value>Toro Selling System</value>
+    </labels>
+    <labels>
+        <fullName>WTU_Class25</fullName>
+        <categories>WTU</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>WTU Class25</shortDescription>
+        <value>WTU Class25</value>
+    </labels>
+    <labels>
+        <fullName>WTU_Class26</fullName>
+        <categories>WTU</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>WTU Class26</shortDescription>
+        <value>WTU Class26</value>
+    </labels>
+    <labels>
+        <fullName>WTU_Class27</fullName>
+        <categories>WTU</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>WTU Class27</shortDescription>
+        <value>WTU Class27</value>
+    </labels>
+    <labels>
+        <fullName>WTU_Class28</fullName>
+        <categories>WTU</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>WTU Class28</shortDescription>
+        <value>WTU Class28</value>
+    </labels>
+    <labels>
+        <fullName>WTU_Class29</fullName>
+        <categories>WTU</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>WTU Class29</shortDescription>
+        <value>WTU Class29</value>
+    </labels>
+    <labels>
+        <fullName>WTU_Class3</fullName>
+        <categories>WTU</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>WTU Class3</shortDescription>
+        <value>Briggs &amp; Stratton Class</value>
+    </labels>
+    <labels>
+        <fullName>WTU_Class4</fullName>
+        <categories>WTU</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>WTU Class4</shortDescription>
+        <value>GDC 2-Wire</value>
+    </labels>
+    <labels>
+        <fullName>WTU_Class5</fullName>
+        <categories>WTU</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>WTU Class5</shortDescription>
+        <value>Hybrid Technology</value>
+    </labels>
+    <labels>
+        <fullName>WTU_Class6</fullName>
+        <categories>WTU</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>WTU Class6</shortDescription>
+        <value>Info Center</value>
+    </labels>
+    <labels>
+        <fullName>WTU_Class7</fullName>
+        <categories>WTU</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>WTU Class7</shortDescription>
+        <value>myTurf</value>
+    </labels>
+    <labels>
+        <fullName>WTU_Class8</fullName>
+        <categories>WTU</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>WTU Class8</shortDescription>
+        <value>Bernhard Reel Technology</value>
+    </labels>
+    <labels>
+        <fullName>Wesco_HasBeenApproved</fullName>
+        <categories>WESCO</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Wesco_HasBeenApproved</shortDescription>
+        <value>has been approved.</value>
+    </labels>
+    <labels>
+        <fullName>Wesco_HasBeenSubmittedForApproval</fullName>
+        <categories>WESCO</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Wesco_HasBeenSubmittedForApproval</shortDescription>
+        <value>has been submitted for your review and approval</value>
+    </labels>
+    <labels>
+        <fullName>Wesco_Has_Been_Submitted_For_Approval</fullName>
+        <categories>WESCO</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Has Been Submitted For Approval</shortDescription>
+        <value>has been submitted for your review and approval.</value>
+    </labels>
+    <labels>
+        <fullName>Work_Order_Attachment_Email_Address</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Work_Order_Attachment_Email_Address</shortDescription>
+        <value>george.mullins@wescoturf.com</value>
+    </labels>
+    <labels>
+        <fullName>linebreak</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>linebreak</shortDescription>
+        <value>-
+-</value>
+    </labels>
+</CustomLabels>

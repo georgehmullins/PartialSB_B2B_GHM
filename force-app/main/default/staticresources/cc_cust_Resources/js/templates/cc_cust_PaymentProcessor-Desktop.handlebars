@@ -1,0 +1,66 @@
+
+    <div class="panel cc_panel cc_payment_processor">
+      <div class="panel-body cc_body">
+      <div class="storedpayment-messagingSection-Error" role="alert" style="display: none"></div>
+      <div class="storedpayment-messagingSection-Warning" role="alert" style="display: none"></div>
+      <div class="storedpayment-messagingSection-Info" role="alert" style="display: none">
+        <button type="button" class="close cc_close" data-dismiss="alert" aria-label="{{pageLabelMap 'Modal_Aria_Close'}}"><span aria-hidden="true">&#215;</span></button>
+      </div>
+      {{#ifDisplay 'WLT.Enabled'}}
+      {{#storedPymt this.storedPayments}}{{/storedPymt}}
+        {{#if this.storedPayments}}
+        <div class="panel panel-default cc_panel cc_payment_processor_mywallet">
+          <div class="panel-heading cc_heading">
+          <h3 class="panel-title cc_title">{{pageLabelMap 'PaymentProcessor_MyWallet'}}</h3>
+          </div>
+          <div class="panel-body cc_body">
+          <div class="cc_stored_payments_container">
+            <div class="cc_top_section">{{pageLabelMap 'PaymentProcessor_Top'}}</div>
+            {{#each this.storedPayments}}
+            <div class="cc_stored_payments_container {{this.accountType}}">
+              <div class="radio">
+              <label for="storedPaymentSelection{{this.sfid}}" class="cc_stored_payments_selector {{this.sfid}}">
+                <input id="storedPaymentSelection{{this.sfid}}" type="radio" name="storedPaymentSelection" value="{{this.sfid}}" class="storedPaymentSelection {{this.sfid}}" data-id="{{this.sfid}}" {{#ifEquals @root.storedSelected this.sfid}}checked{{/ifEquals}}/></span>
+              </label>
+              <span class="cc_stored_payment_display">
+                {{pageLabelMapMultiString 'PaymentDisplay_' this.accountType this.accountType this.accountNumber this.subAccountNumber (pageLabelMapMultiString 'PaymentType_' this.paymentType) (pageLabelMapMultiString 'PaymentExpMonth_' this.expirationMonth) (pageLabelMap this.expirationYear) this.displayName}}
+              </span>
+              </div>
+            </div>
+            {{/each}}
+            <div class="cc_payment_action_container">
+            <p class="panel-body pull-right cc_action_buttons">
+              <button type="button" id="storePaymentBtn" class="btn btn-default btn-sm useStoredPayment cc_use_stored_payment">{{pageLabelMap 'PaymentProcessor_UseStoredPayment'}}</button>
+            </p>
+            </div>
+          </div>
+          </div>
+        </div>
+        {{/if}}
+        {{/ifDisplay}}
+                      
+      </div>
+      <div class="paymentMidSection">{{pageLabelMap 'PaymentProcessor_MidSec'}}</div>
+       {{#paymentTermsOrder this.paymentTypes}}{{/paymentTermsOrder}}
+      {{#if this.paymentTypes}}
+      <div class="cc_payment_types_container">
+        <ul class="nav nav-tabs cc_nav-tabs cc_nav-tabs-payment" role="tablist">
+        {{#each this.paymentTypes}}
+          <li role="presentation" {{#ifEquals @index 0 }} class="active cc_nav-tabs_li" {{/ifEquals}}>
+          <a href="#{{@key}}" aria-controls="{{@key}}" role="tab" class="cc_nav-tabs_anchor" data-toggle="tab">{{pageLabelMapMultiString 'PaymentProcessorTab_' @key}}</a>
+          </li>
+        {{/each}}
+        </ul>
+        <!--***********-->
+        <div class="tab-content cc_tab-content">
+        {{#each this.paymentTypes}}
+          <div role="tabpanel" class="cc_tab-pane tab-pane {{#ifEquals @index 0 }} active {{/ifEquals}} " id="{{@key}}">
+          <div class="paymentTypeContainer {{@key}} err cc_payment_type">
+            {{pageLabelMap 'Payment_LoadingPaymentType'}}
+          </div>
+          </div>
+        {{/each}}
+        </div>
+      </div>
+      {{/if}}
+    </div>

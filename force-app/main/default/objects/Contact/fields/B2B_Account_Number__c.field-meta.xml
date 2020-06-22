@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>B2B_Account_Number__c</fullName>
+    <description>Account number from related Account - Account Number field</description>
+    <externalId>false</externalId>
+    <formula>Account.AccountNumber</formula>
+    <inlineHelpText>Account number from related Account - Account Number field</inlineHelpText>
+    <label>B2B Account Number</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

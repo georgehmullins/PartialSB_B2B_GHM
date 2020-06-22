@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_Active_WescoUsed</fullName>
+    <columns>NAME</columns>
+    <columns>ccrz__DisplayName__c</columns>
+    <columns>ccrz__Product__c</columns>
+    <columns>ccrz__Category__c</columns>
+    <columns>ccrz__Enabled__c</columns>
+    <columns>ccrz__URL__c</columns>
+    <columns>ccrz__Sequence__c</columns>
+    <columns>B2B_Account_Menu_Control__c</columns>
+    <columns>ccrz__StoreID__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>ccrz__Enabled__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>ccrz__StoreID__c</field>
+        <operation>equals</operation>
+        <value>WescoUsed</value>
+    </filters>
+    <label>All Active WescoUsed</label>
+</ListView>
