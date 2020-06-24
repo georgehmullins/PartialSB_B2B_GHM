@@ -293,6 +293,21 @@ header .cc_menu_container {
     width: 220px;
 } */
 
+/* ADDED BY WESCO FOR MOBILE PLP */
+
+@media (max-width: 767px) {
+	.cc_row_product_info {
+	margin-left: 50px;
+	}
+}
+
+/* WESCO RJD EDIT MOBILE VIEW OF PLP LIST */
+
+.panel.panel-default.cc_panel {
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
 /*----- ADDED BY WESCO PDP ----- */
 
 .b2b_base_price {
@@ -341,8 +356,9 @@ width: 50px;
 /*----- ADDED BY WESCO CART ----- */
 
 img.img-responsive.center-block.img-thumbnail {
-    max-width: 70%;
-}
+    max-width: 100%;
+	margin-bottom: 90px; /* added to push favorite button on list view PLP - may mess with thumbnails elsewhere RJD */
+	}
 
 .cart-links {
 font-size: 10px;
@@ -548,7 +564,6 @@ background-color: #fff;
 .cc_product_detail .cc_wish_finder .row>.col-md-10 {
     width: 100%;
 }
-
 
 /* PDP Product detail fix */
 
@@ -1076,6 +1091,8 @@ p.header-spacer {
     background-color: #fff;
     border: none;
     border-radius: 0px;
+	margin-left: 15px;
+	margin-right: 15px;
 }
 
 .label-default {
